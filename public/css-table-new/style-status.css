@@ -1,0 +1,52 @@
+.table-body tbody td.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c;
+}
+
+.table-body tbody td.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 4px 10px 4px 25px;
+}
+
+
+  .table-body tbody td.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 4px 10px 4px 25px; }
+    .table-body tbody td.status span:after {
+      position: absolute;
+      top: 9px;
+      left: 10px;
+      width: 10px;
+      height: 10px;
+      content: '';
+      border-radius: 50%; }
+  .table-body tbody td.status .active {
+    background: #cff6dd;
+    color: #1fa750; }
+    .table-body tbody td.status .active:after {
+      background: #23bd5a; }
+  .table-body tbody td.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c; }
+    .table-body tbody td.status .waiting:after {
+      background: #f2be1d; }
+  .table-body tbody td .img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; }
+  .table-body tbody td .email span {
+    display: block; }
+    .table-body tbody td .email span:last-child {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.3); }
+  .table-body tbody td .close span {
+    font-size: 12px;
+    color: #dc3545; }
+
+  .table-body tbody td.status .active {
+    background: #cff6dd;
+    color: #1fa750;
+}
+

@@ -10,7 +10,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1px;
+    
 }
 
 .menu-bar {
@@ -18,8 +18,8 @@ body {
     grid-column: 1/-1;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
-    padding: 20px 10px;
+    /*border: 1px solid black;*/
+    padding: 4px;
     color: #fff;
 }
 
@@ -31,6 +31,7 @@ body {
 .menu-options a {
     margin: 0px 10px;
     font-size: 15px;
+    font-weight: bold;
 }
 
 .menu-options a:hover {
@@ -76,61 +77,3 @@ li:hover > ul {
     /*border: 1px solid black; */
 }
 
-table {
-    width: 85%;
-    border: 1px solid #bdbdbd;
-    border-collapse: collapse;
-    border-radius: 2px;
-    margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
-}
-th,
-td {
-    text-align: center;
-    vertical-align: top;
-    border: 1px solid #bdbdbd;
-    padding: 0.3em;
-    caption-side: bottom;
-}
-
-th {
-    background: #eee;
-}
-
-.table-head th {
-    background-color: #5cb85c;
-}
-
-.table-head th {
-    color: #fff;
-}
-tbody tr:nth-child(odd) {
-    background-color: #eeeeee;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #b0bec5;
-}
-
-.actions {
-    display: flex;
-}
-
-.actions a {
-    margin: 2px;
-    text-decoration: none;
-    padding: 4px 8px;
-    color: #fff;
-}
-
-.actions .edit {
-    background-color: green;
-    border: none;
-    border-radius: 3px;
-}
-
-.actions .delete {
-    background-color: red;
-    border: none;
-    border-radius: 4px;
-}
