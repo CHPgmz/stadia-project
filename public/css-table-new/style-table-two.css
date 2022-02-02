@@ -184,35 +184,24 @@ th, td {
 }
 
 .column1 {
-  width: 16%;
-  padding-left: 20px;
+  width: 20%;
+  padding-left: 10px;
 }
 
 .column2 {
-  width: 15%;
+  width: 20%;
 }
 
 .column3 {
-  width: 11%;
+  width: 20%;
 }
 
 .column4 {
-  width: 11%;
+  width: 20%;
 }
 
 .column5 {
-  width: 11%;
-}
-.column6 {
-width: 09%;
-}
-
-.column7 {
-width: 11%;
-}
-
-.column8 {
-    width: 08%;
+  width: 20%;
 }
 
  /*.table100-head th {
@@ -255,7 +244,9 @@ width: 11%;
   font-size: 17px;
   color: #fff;
   line-height: 1.4;
-
+  /*padding: 10px;*/
+  padding: 10px 0;
+  width: 20%;
   background-color: #6c7ae0;
 }
 
@@ -294,7 +285,7 @@ width: 11%;
   background-color: #cccccc;
 }
 
-.register {
+/*.register {
   padding: 6px 8px;
   background: #6c7ae0;
   border-radius: 03px;
@@ -307,4 +298,40 @@ width: 11%;
 .options-registers {
   width: 95%;
   margin: 20px auto;
+}*/
+
+
+/*Estilos de los botones
+Enter*/
+.button-edit {
+  background: #81d4fa;
+  width: 80px;
+  height: 23px;
+  border: none;
+  border-radius: 3px;
+}
+.button-edit:hover {
+  border: 1px solid yellow;
+}
+.button-delete:hover {
+  border: 1px solid green;
+}
+
+.button-edit > i{
+  margin-right: 4px;
+}
+.button-delete > i{
+  margin-right: 4px;
+}
+.button-delete {
+  background: #e53935;
+  width: 80px;
+  border: none;
+  height: 23px;
+  border-radius: 3px;
+}
+
+.name-obra {
+  font-weight: bold;
+  font-size: 12px;
 }

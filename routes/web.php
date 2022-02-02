@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TecnicosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('home', function(){
-    return view('pages.home');
-});
+Route::get('home', function () {
+    return view('home');
+})->name('home');
+
+Route::get('tecnicos', [TecnicosController::class, 'index'])->name('tecnicos.todo');
+
