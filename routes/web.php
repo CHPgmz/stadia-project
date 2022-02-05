@@ -22,5 +22,8 @@ Route::get('home', function () {
     return view('home');
 })->name('home');
 
-Route::get('tecnicos', [TecnicosController::class, 'index'])->name('tecnicos.todo');
+Route::get('dev-materiales', function () {
+    return view('pages.table-devmateriales');
+})->name('materiales');
 
+Route::get('tecnicos', [TecnicosController::class, 'index'])->name('tecnicos.todo');

@@ -1,10 +1,7 @@
 
 
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
 
-
-@font-face {
+/*@font-face {
   font-family: Lato-Regular;
   src: url('../fonts/Lato/Lato-Regular.ttf');
 }
@@ -12,7 +9,7 @@
 @font-face {
   font-family: Lato-Bold;
   src: url('../fonts/Lato/Lato-Bold.ttf');
-}
+}*/
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -24,7 +21,7 @@
 
 body, html {
 	height: 100%;
-	font-family: sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 /* ------------------------------------ */
@@ -150,7 +147,6 @@ th {
 .container-table100 {
   width: 100%;
   margin: auto;
-  min-height: 60vh;
   background: #fff;
 
   display: -webkit-box;
@@ -165,7 +161,7 @@ th {
 }
 
 .wrap-table100 {
-  width: 95%;
+  width: 85%;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -184,24 +180,40 @@ th, td {
 }
 
 .column1 {
-  width: 20%;
-  padding-left: 10px;
+  width: 16%;
+  padding-left: 20px;
 }
 
 .column2 {
-  width: 20%;
+  width: 16%;
 }
 
 .column3 {
-  width: 20%;
+  width: 16%;
 }
 
 .column4 {
-  width: 20%;
+  width: 16%;
 }
 
 .column5 {
-  width: 20%;
+  width: 16%;
+}
+.column6 {
+  width: 16%;
+}
+
+.column7 {
+width: 16%;
+}
+
+.column8 {
+    width: 08%;
+}
+
+.column-m1 {
+  width: 5%;
+  padding-left: 15px;
 }
 
  /*.table100-head th {
@@ -210,20 +222,22 @@ th, td {
 
 }*/
 
+
 .table100-body td {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-size: 20px;
+  /*padding-top: 12px;
+  padding-bottom: 12px;*/
+  font-size: 16px;
 }
 
 /*==================================================================
 [ Fix header ]*/
 .table100 {
   position: relative;
-  padding-top: 50px;
+
 }
 
 .table100-head {
+  
   position: absolute;
   width: 100%;
   top: 0;
@@ -233,6 +247,7 @@ th, td {
 .table100-body {
   max-height: 585px;
   overflow: auto;
+  margin-top: 30px;
 }
 
 
@@ -240,21 +255,20 @@ th, td {
 [ Ver1 ]*/
 
 .table100.ver1 th {
-  font-family: 'Roboto', sans-serif;
-  font-size: 17px;
-  color: #fff;
-  line-height: 1.4;
-  /*padding: 10px;*/
-  padding: 10px 0;
-  width: 20%;
-  background-color: #6c7ae0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  margin:auto;
+  font-weight: 600;
+  color: #3e5569;
+
 }
 
 .table100.ver1 td {
-  font-family: 'Roboto', sans-serif;;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 16px;
-  color: #808080;
-  line-height: 1.4;
+  margin: auto;
+  color: #3e5569;
+  line-height: 40px;
 }
 
 .table100.ver1 .table100-body tr:nth-child(even) {
@@ -264,7 +278,7 @@ th, td {
 /*---------------------------------------------*/
 
 .table100.ver1 {
-  border-radius: 10px;
+  border-radius: 06px;
   overflow: hidden;
   box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
@@ -285,7 +299,7 @@ th, td {
   background-color: #cccccc;
 }
 
-/*.register {
+.register {
   padding: 6px 8px;
   background: #6c7ae0;
   border-radius: 03px;
@@ -296,42 +310,71 @@ th, td {
 }
 
 .options-registers {
-  width: 95%;
+  width: 85%;
   margin: 20px auto;
-}*/
-
-
-/*Estilos de los botones
-Enter*/
-.button-edit {
-  background: #81d4fa;
-  width: 80px;
-  height: 23px;
-  border: none;
-  border-radius: 3px;
-}
-.button-edit:hover {
-  border: 1px solid yellow;
-}
-.button-delete:hover {
-  border: 1px solid green;
 }
 
-.button-edit > i{
-  margin-right: 4px;
-}
-.button-delete > i{
-  margin-right: 4px;
-}
-.button-delete {
-  background: #e53935;
-  width: 80px;
-  border: none;
-  height: 23px;
-  border-radius: 3px;
+
+/*
+ * Aqui comienza el estilo de las estatus de la tabla */
+ /* ------------------------------------------------ */
+
+.table-body tbody td.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c;
 }
 
-.name-obra {
-  font-weight: bold;
-  font-size: 12px;
+.table-body tbody td.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 4px 10px 4px 25px;
 }
+
+
+  .table-body tbody td.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 4px 10px 4px 25px; }
+    .table-body tbody td.status span:after {
+      position: absolute;
+      top: 9px;
+      left: 10px;
+      width: 10px;
+      height: 10px;
+      content: '';
+      border-radius: 50%; }
+  .table-body tbody td.status .active {
+    background: #cff6dd;
+    color: #1fa750; }
+    .table-body tbody td.status .active:after {
+      background: #23bd5a; }
+  .table-body tbody td.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c; }
+    .table-body tbody td.status .waiting:after {
+      background: #f2be1d; }
+  .table-body tbody td .img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; }
+  .table-body tbody td .email span {
+    display: block; }
+    .table-body tbody td .email span:last-child {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.3); }
+  .table-body tbody td .close span {
+    font-size: 12px;
+    color: #dc3545; }
+
+  .table-body tbody td.status .active {
+    background: #cff6dd;
+    color: #1fa750;
+}
+
+
+/*
+ * Estilo de los modals
+ *
+ * */
+
+

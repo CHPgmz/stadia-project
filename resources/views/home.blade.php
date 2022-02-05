@@ -4,8 +4,8 @@
 
 <!--<link rel="stylesheet" href="{{ asset('css-table-new/util.css') }}">-->
 <link rel="stylesheet" href="{{asset('css-table-new/main.css')}}">
-<link rel="stylesheet" href="{{asset('css-table-new/style-status.css')}}">
-<link rel="stylesheet" href="{{asset('css/style-modal.css')}}">
+<!--<link rel="stylesheet" href="{{asset('css-table-new/style-status.css')}}"> -->
+<!-- <link rel="stylesheet" href="{{asset('css/style-modal.css')}}"> -->
 <style type="text/css" >
 .button-edit {
 	background: #81d4fa;
@@ -57,12 +57,12 @@
 						<table>
 							<thead>
 								<tr class="row100 head">
-									<th class="cell100 column1">Nombre Obra</th>
+									<th class="cell100 column1">Nom. Obra</th>
 									<th class="cell100 column2">Tipo Obra</th>
 									<th class="cell100 column3">Estatus</th>
 									<th class="cell100 column4">Supervisor</th>
-									<th class="cell100 column5">Fecha_Inicio</th>
-                           <th class="cell100 column6">Fecha-Terminacion</th>
+									<th class="cell100 column5">F. Inicio</th>
+                           <th class="cell100 column6">F. Terminacion</th>
                            <th class="cell100 column7">Acciones</th>
 								</tr>
 							</thead>
@@ -175,61 +175,6 @@
                            </td>
 								</tr>
 
-                        <!--<tr class="row100 body">
-									<td class="cell100 column1">Mind & Body</td>
-									<td class="cell100 column2">Yoga</td>
-									<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-									<td class="cell100 column4">Adam Stewart</td>
-									<td class="cell100 column5">15</td>
-								</tr>
-
-								<tr class="row100 body">
-									<td class="cell100 column1">Crit Cardio</td>
-									<td class="cell100 column2">Gym</td>
-									<td class="cell100 column3">9:00 AM - 10:00 AM</td>
-									<td class="cell100 column4">Aaron Chapman</td>
-									<td class="cell100 column5">10</td>
-								</tr>
-
-								<tr class="row100 body">
-									<td class="cell100 column1">Wheel Pose Full Posture</td>
-									<td class="cell100 column2">Yoga</td>
-									<td class="cell100 column3">7:00 AM - 8:30 AM</td>
-									<td class="cell100 column4">Donna Wilson</td>
-									<td class="cell100 column5">15</td>
-								</tr>
-
-								<tr class="row100 body">
-									<td class="cell100 column1">Playful Dancer's Flow</td>
-									<td class="cell100 column2">Yoga</td>
-									<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-									<td class="cell100 column4">Donna Wilson</td>
-									<td class="cell100 column5">10</td>
-								</tr>
-
-								<tr class="row100 body">
-									<td class="cell100 column1">Zumba Dance</td>
-									<td class="cell100 column2">Dance</td>
-									<td class="cell100 column3">5:00 PM - 7:00 PM</td>
-									<td class="cell100 column4">Donna Wilson</td>
-									<td class="cell100 column5">20</td>
-								</tr>
-
-								<tr class="row100 body">
-									<td class="cell100 column1">Cardio Blast</td>
-									<td class="cell100 column2">Gym</td>
-									<td class="cell100 column3">5:00 PM - 7:00 PM</td>
-									<td class="cell100 column4">Randy Porter</td>
-									<td class="cell100 column5">10</td>
-								</tr>
-
-								<tr class="row100 body">
-									<td class="cell100 column1">Pilates Reformer</td>
-									<td class="cell100 column2">Gym</td>
-									<td class="cell100 column3">8:00 AM - 9:00 AM</td>
-									<td class="cell100 column4">Randy Porter</td>
-									<td class="cell100 column5">10</td>
-                        </tr> -->
 
 							</tbody>
 						</table>
@@ -240,8 +185,7 @@
 	</div>
 
 
-@endsection
-<div id="myModal" class="modal">
+<div id="myModal" class="modal mod-home">
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
@@ -254,16 +198,25 @@
                             <input class="form-input" type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">Estatus</label>
-                            <input type="text" />
+                            <label for="">Estatus</label> 
+									 <select id="" name="select">
+									 	<option value="Cobro 90%">Cobro 90%</option>
+										<option value="Cobro 100%">Cobro 100%</option>
+										<option value="Lum">Lum</option>
+										<option value="Proceso de construcción">Proceso de construcción</option>
+									 </select>
                         </div>
                         <div class="form-edit">
                             <label for="">Tipo de Obra </label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">Supervisor </label>
-                            <input type="text" />
+                            <label for="">Supervisor </label> 
+									 <select id="" name="select">
+									 	<option value="Epifanio">Epifanio</option>
+										<option value="Oscar">Oscar</option>
+										<option value="David">David</option>
+									 </select>
                         </div>
                         <div class="form-edit">
                             <label for="">Fecha de Inicio</label>
@@ -319,13 +272,13 @@
                         </div>
                     </form>
                 </div>
-                <!--<div class="modal-footer">
-                <h3>Modal Footer</h3> -->
+
                 </div>
             </div>
         </div>
+@endsection
+
 @section('scripts')
-<script src="https://kit.fontawesome.com/2ead8049d9.js" crossorigin="anonymous"></script>
 <script >
             var modal = document.getElementById("myModal");
 

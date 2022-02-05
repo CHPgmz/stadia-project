@@ -1,11 +1,12 @@
+
 @extends('menu_home')
 
 @section('estilos')
 
-<link rel="stylesheet" href="{{asset('css-table-new/style-table-two.css')}}">
-<!-- <link rel="stylesheet" href="{{asset('css-table-new/style-status.css')}}"> -->
+<!--<link rel="stylesheet" href="{{ asset('css-table-new/util.css') }}">-->
+<link rel="stylesheet" href="{{asset('css-table-new/main.css')}}">
+<!--<link rel="stylesheet" href="{{asset('css-table-new/style-status.css')}}"> -->
 <!-- <link rel="stylesheet" href="{{asset('css/style-modal.css')}}"> -->
-
 <style type="text/css" >
 .button-edit {
 	background: #81d4fa;
@@ -40,10 +41,12 @@
 	font-size: 12px;
 }
 </style>
+
 @endsection
 
 @section('contenido')
 <div class="options-registers">
+	<a class="register" href="#">Registrar Obra</a>
 	<a class="register" href="#">Resgistrar Tecnico</a>
 </div>
 
@@ -52,16 +55,15 @@
 			<div class="wrap-table100">
 				<div class="table100 ver1 m-b-110">
 					<div class="table100-head">
-						<h3>Tabla Tecnicos</h3>
 						<table>
 							<thead>
 								<tr class="row100 head">
 									<th class="cell100 column-m1">ID</th>
-									<th class="cell100 column2">Nombre</th>
-									<th class="cell100 column3">Apellidos</th>
-									<th class="cell100 column4">PIC</th>
-									<th class="cell100 column5">Telefono</th>
-									<th class="cell100 column6">Gmail</th>
+									<th class="cell100 column2">N. Obra</th>
+									<th class="cell100 column3">Supervisor</th>
+									<th class="cell100 column4">OB</th>
+									<th class="cell100 column5">Estatus</th>
+                           <th class="cell100 column-m6">Observaciones</th>
                            <th class="cell100 column7">Acciones</th>
 								</tr>
 							</thead>
@@ -73,41 +75,17 @@
 							<tbody>
 								<tr class="row100 body">
 									<td class="cell100 column-m1">1</td>
-									<td class="cell100 column2">Alfredo</td>
-									<td class="cell100 column3">Gomez Miranda</td>
-									<td class="cell100 column4">89877FG</td>
-                           <td class="cell100 column5">961829754</td>
-									<td class="cell100 column6">correo.test@gmail.com</td>
+									<td class="cell100 column2">PVU001</td>
+                           <td class="cell100 column3">WILLLIAM</td>
+									<td class="cell100 column4">OB866649</td>
+									<td class="cell100 column5">Deuda de Material</td>
+									<td class="cell100 column-m6">Formato de devolucion enviado</td>
                            <td class="cell100 column7">
 										<button class="button-edit" role="button" id="myBtn"><i class="far fa-edit"></i>Detalles</button>
 										<button class="button-delete" role="button"><i class="far fa-trash-alt"></i>Eliminar</button>
 									</td>
 								</tr>
 
-								<tr class="row100 body">
-									<td class="cell100 column-m1">1</td>
-									<td class="cell100 column2">Alfredo</td>
-									<td class="cell100 column3">Gomez Miranda</td>
-									<td class="cell100 column4">89877FG</td>
-                           <td class="cell100 column5">961829754</td>
-									<td class="cell100 column6">correo.test@gmail.com</td>
-                           <td class="cell100 column7">
-										<button class="button-edit" role="button" id="myBtn"><i class="far fa-edit"></i>Detalles</button>
-										<button class="button-delete" role="button"><i class="far fa-trash-alt"></i>Eliminar</button>
-									</td>
-								</tr>
-								<tr class="row100 body">
-									<td class="cell100 column-m1">1</td>
-									<td class="cell100 column2">Alfredo</td>
-									<td class="cell100 column3">Gomez Miranda</td>
-									<td class="cell100 column4">89877FG</td>
-                           <td class="cell100 column5">961829754</td>
-									<td class="cell100 column6">correo.test@gmail.com</td>
-                           <td class="cell100 column7">
-										<button class="button-edit" role="button" id="myBtn"><i class="far fa-edit"></i>Detalles</button>
-										<button class="button-delete" role="button"><i class="far fa-trash-alt"></i>Eliminar</button>
-									</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -117,7 +95,7 @@
 	</div>
 
 
-<div id="myModal" class="modal modal-custom">
+<div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
@@ -126,45 +104,44 @@
                 <div class="modal-body">
                     <form action="" class="form-obra">
                         <div class="form-edit">
-                            <label for="">Nombre</label>
-                            <input  type="text" />
+                            <label for="">N. Obra</label>
+                            <input class="form-input" type="text" value="HGKG76" />
                         </div>
                         <div class="form-edit">
-                            <label for="">Apellidos</label>
-                            <input type="text">
+                            <label for="">Supervisor</label>
+									 <!--<input type="text"  value="Epifanio"/> -->
+									 <select id="" name="select">
+									 	<option value="Epifanio">Epifanio</option>
+										<option value="Oscar">Oscar</option>
+										<option value="David">David</option>
+									 </select>
                         </div>
                         <div class="form-edit">
-                            <label for="">PIC</label>
-                            <input type="text" />
+                            <label for="">OB</label>
+                            <input type="text" value="JGHFC65"/>
                         </div>
                         <div class="form-edit">
-                            <label for="">Telefono</label>
-                            <input type="text" />
+									<label for="">Estatus </label>
+                            <input type="text" value="Actvio"/>
                         </div>
                         <div class="form-edit">
-                            <label for="">GMAIL</label>
-                            <input type="text" />
+                            <label for="">Observaciones</label>
+                            <input type="text" value="No hay Onservaciones" />
                         </div>
-								<div class="form-edit">
-									<label for="">Direcccion</label>
-									<input type="text">
-								</div>
+
                         <div class="button-edit-form form-edit">
                             <button class="buttons-forms but-edit">edit</button>
                             <button class="buttons-forms but-cancel close">Cancelar</button>
                         </div>
                     </form>
                 </div>
-                <!--<div class="modal-footer">
-                <h3>Modal Footer</h3> -->
+
                 </div>
             </div>
         </div>
 @endsection
 
-
 @section('scripts')
-
 <script >
             var modal = document.getElementById("myModal");
 
@@ -192,5 +169,4 @@
             };
 </script>
 @endsection
-
 

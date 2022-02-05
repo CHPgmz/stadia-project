@@ -3,17 +3,6 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
-
-@font-face {
-  font-family: Lato-Regular;
-  src: url('../fonts/Lato/Lato-Regular.ttf');
-}
-
-@font-face {
-  font-family: Lato-Bold;
-  src: url('../fonts/Lato/Lato-Bold.ttf');
-}
-
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 * {
@@ -24,7 +13,7 @@
 
 body, html {
 	height: 100%;
-	font-family: sans-serif;
+   font-family: 'Nunito Sans', sans-serif;
 }
 
 /* ------------------------------------ */
@@ -99,6 +88,7 @@ table {
 
 th {
     text-align: left;
+    
 }
 .table100 .ps__rail-y {
   width: 9px;
@@ -150,7 +140,6 @@ th {
 .container-table100 {
   width: 100%;
   margin: auto;
-  min-height: 60vh;
   background: #fff;
 
   display: -webkit-box;
@@ -188,6 +177,14 @@ th, td {
   padding-left: 20px;
 }
 
+.columnid {
+  width: 2%;
+}
+
+.columnob{
+ width: 22%;
+}
+
 .column2 {
   width: 15%;
 }
@@ -215,6 +212,13 @@ width: 11%;
     width: 08%;
 }
 
+.column-m1 {
+  width: 3%;
+  padding-left: 5px;
+}
+.column-m6 {
+  width: 22%;
+}
  /*.table100-head th {
    padding-top: 10px;
   padding-bottom: 10px;
@@ -251,16 +255,14 @@ width: 11%;
 [ Ver1 ]*/
 
 .table100.ver1 th {
-  font-family: 'Roboto', sans-serif;
   font-size: 17px;
+  font-weight: 600;
   color: #fff;
-  line-height: 1.4;
-
+  line-height: 2.5;
   background-color: #6c7ae0;
 }
 
 .table100.ver1 td {
-  font-family: 'Roboto', sans-serif;;
   font-size: 16px;
   color: #808080;
   line-height: 1.4;
@@ -308,3 +310,64 @@ width: 11%;
   width: 95%;
   margin: 20px auto;
 }
+
+
+/*
+ * Aqui empieza el estilo del estatus de la tabla
+ */
+
+/* ---------------------------------*/
+
+
+.table-body tbody td.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c;
+}
+
+.table-body tbody td.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 4px 10px 4px 25px;
+}
+
+
+  .table-body tbody td.status span {
+    position: relative;
+    border-radius: 30px;
+    padding: 4px 10px 4px 25px; }
+    .table-body tbody td.status span:after {
+      position: absolute;
+      top: 9px;
+      left: 10px;
+      width: 10px;
+      height: 10px;
+      content: '';
+      border-radius: 50%; }
+  .table-body tbody td.status .active {
+    background: #cff6dd;
+    color: #1fa750; }
+    .table-body tbody td.status .active:after {
+      background: #23bd5a; }
+  .table-body tbody td.status .waiting {
+    background: #fdf5dd;
+    color: #cfa00c; }
+    .table-body tbody td.status .waiting:after {
+      background: #f2be1d; }
+  .table-body tbody td .img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; }
+  .table-body tbody td .email span {
+    display: block; }
+    .table-body tbody td .email span:last-child {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.3); }
+  .table-body tbody td .close span {
+    font-size: 12px;
+    color: #dc3545; }
+
+  .table-body tbody td.status .active {
+    background: #cff6dd;
+    color: #1fa750;
+}
+
