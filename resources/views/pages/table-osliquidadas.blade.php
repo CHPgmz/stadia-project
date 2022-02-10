@@ -1,57 +1,14 @@
 @extends('menu_home')
 
 @section('estilos')
-
-<!--<link rel="stylesheet" href="{{ asset('css-table-new/util.css') }}">-->
 <link rel="stylesheet" href="{{asset('css-table-new/main.css')}}">
-<!--<link rel="stylesheet" href="{{asset('css-table-new/style-status.css')}}"> -->
-<!-- <link rel="stylesheet" href="{{asset('css/style-modal.css')}}"> -->
-<!--<style type="text/css" >
-.button-edit {
-	background: #81d4fa;
-	width: 80px;
-	height: 23px;
-	border: none;
-	border-radius: 3px;
-}
-.button-edit:hover {
-	border: 1px solid yellow;
-}
-.button-delete:hover {
-	border: 1px solid green;
-}
-
-.button-edit > i{
-	margin-right: 4px;
-}
-.button-delete > i{
-	margin-right: 4px;
-}
-.button-delete {
-	background: #e53935;
-	width: 80px;
-	border: none;
-	height: 23px;
-	border-radius: 3px;
-}
-
-.name-obra {
-	font-weight: bold;
-	font-size: 12px;
-}
-</style>-->
-
 @endsection
 
 @section('contenido')
-<!--<div class="options-registers">
-	<a class="register" href="#">Registrar Obra</a>
-	<a class="register" href="#">Resgistrar Tecnico</a>
-	</div>-->
 
 <div class="content">
 			<div class="title">
-				<h3>Tabla: Obras</h3>
+				<h3>Tabla: OS Liquidadas</h3>
 				<a href="#" class="new-reg">Nuevo Registro</a>
 			</div>
 			<div class="content-body">
@@ -59,143 +16,132 @@
 					<thead class="table-thead">
 					<tr class="tr-head">
 						<th class="id-td">ID#</th>
-						<th class="td-2">Nom. OBRA</th>
-						<th class="td-3">Tip. OBRA</th>
-						<th class="td-4">ESTATUS</th>
-						<th class="td-5">SUPERVISOR</th>
-						<th class="td-6">F. INICIO</th>
-						<th class="td-7">F. TERM.</th>
-						<th class="td-8">ACCIONES</th>
+						<th class="tdl-2">Estado</th>
+						<th class="tdl-3">Fecha</th>
+						<th class="tdl-4">Numero</th>
+						<th class="tdl-5">N. Cliente</th>
+						<th class="tdl-6">N. Tecnico</th>
+                  <th class="tdl-7">Distrito</th>
+						<th class="tdl-8">ACCIONES</th>
 					</tr>
 					</thead>
 					<tbody class="table-body">
 						<tr class="tr-body">
 							<td class="id-td">1</td>
-							<td class="td-2">RDA Medical Baumachine</td>
-							<td class="td-3">RDA</td>
-							<td class="td-4 status"><span class="active">90% de pago</span></td>
-							<td class="td-5">Freddy</td>
-							<td class="td-6">12/01/2022</td>
-							<td class="td-7">18/01/2022</td>
-							<td class="td-8">
+							<td class="tdl-2">Tuxtla</td>
+							<td class="tdl-3">01/02/2022</td>
+							<td class="tdl-4">961829754</td>
+							<td class="tdl-5">De la cruz Ballinas Ricardo</td>
+							<td class="tdl-6">Gerardo Lopez Vazquez</td>
+                     <td class="tdl-7">XAM0005FO</td>
+							<td class="tdl-8">
+								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
+								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
+							</td>
+						</tr>
+						<tr class="tr-body">
+							<td class="id-td">1</td>
+							<td class="tdl-2">Tuxtla</td>
+							<td class="tdl-3">01/02/2022</td>
+							<td class="tdl-4">961829754</td>
+							<td class="tdl-5">De la cruz Ballinas Ricardo</td>
+							<td class="tdl-6">Gerardo Lopez Vazquez</td>
+                     <td class="tdl-7">XAM0005FO</td>
+							<td class="tdl-8">
+								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
+								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
+							</td>
+						</tr>
+						<tr class="tr-body">
+							<td class="id-td">1</td>
+							<td class="tdl-2">Tuxtla</td>
+							<td class="tdl-3">01/02/2022</td>
+							<td class="tdl-4">961829754</td>
+							<td class="tdl-5">De la cruz Ballinas Ricardo</td>
+							<td class="tdl-6">Gerardo Lopez Vazquez</td>
+                     <td class="tdl-7">XAM0005FO</td>
+							<td class="tdl-8">
 								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
 								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
 							</td>
 						</tr>
 
-						<tr class="tr-body">
-							<td class="id-td">2</td>
-							<td class="td-2">PVU001 Ipsum deserunt</td>
-							<td class="td-3">RDA</td>
-							<td class="td-4 status"><span class="waiting">70% de pago</span></td>
-							<td class="td-5">Freddy</td>
-							<td class="td-6">12/01/2022</td>
-							<td class="td-7">18/01/2022</td>
-							<td class="td-8">
-								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
-								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-							</td>
-						</tr>
-						<tr class="tr-body">
-							<td class="id-td">3</td>
-							<td class="td-2">Primera Obra</td>
-							<td class="td-3">RDA</td>
-							<td class="td-4 status"><span class="active">Cobro de 90%</span></td>
-							<td class="td-5">Freddy</td>
-							<td class="td-6">12/01/2022</td>
-							<td class="td-7">18/01/2022</td>
-							<td class="td-8">
-								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
-								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-							</td>
-						</tr>
+
 					</tbody>
 				</table>
 			</div>
 </div>
 
-
-<div id="myModal" class="modal mod-home">
+<div id="myModal" class="modal mod-osl">
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
                     <p>Editar Registro</p>
                 </div>
-<div class="modal-body">
+                <div class="modal-body">
                     <form action="" class="form-obra">
                         <div class="form-edit">
-                            <label for="">Nombre de la obra</label>
+                            <label for="">Estado</label>
                             <input class="form-input" type="text" />
                         </div>
-                        <div class="form-edit">
-                            <label for="">Estatus</label> 
-									 <select id="" name="select">
-									 	<option value="Cobro 90%">Cobro 90%</option>
-										<option value="Cobro 100%">Cobro 100%</option>
-										<option value="Lum">Lum</option>
-										<option value="Proceso de construcción">Proceso de construcción</option>
-									 </select>
-                        </div>
-                        <div class="form-edit">
-                            <label for="">Tipo de Obra </label>
-                            <input type="text" />
-                        </div>
-                        <div class="form-edit">
-                            <label for="">Supervisor </label> 
+                        <!--<div class="form-edit">
+                            <label for="">Supervisor</label>
+									 <!--<input type="text"  value="Epifanio"/>
 									 <select id="" name="select">
 									 	<option value="Epifanio">Epifanio</option>
 										<option value="Oscar">Oscar</option>
 										<option value="David">David</option>
 									 </select>
+                        </div>-->
+                        <div class="form-edit">
+                            <label for="">Fecha</label>
+                            <input type="date"/>
                         </div>
                         <div class="form-edit">
-                            <label for="">Fecha de Inicio</label>
-                            <input type="date" />
+									<label for="">Numero </label>
+                            <input type="number" />
                         </div>
                         <div class="form-edit">
-                            <label for="">Fecha de Terminacion</label>
-                            <input type="date" />
-                        </div>
-                        <div class="form-edit">
-                            <label for="">Fecha Compromiso</label>
+                            <label for="">N. Cliente</label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">Documentos fisicos</label>
+                            <label for="">N. Tecnico</label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">FCC</label>
+                            <label for="">Pic Tecnico</label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">Enviada A Factura</label>
+                            <label for="">M. de Instalacion</label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">PEB</label>
+                            <label for="">Numero OS</label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">Operación</label>
+                            <label for="">Pisaplex</label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">OEI</label>
+                          <label for="">Distrito</label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">OE</label>
+                            <label for="">Terminal</label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">CTL/DTTO/RB/ACOMETIDA</label>
+                            <label for="">Puerto</label>
                             <input type="text" />
                         </div>
                         <div class="form-edit">
-                            <label for="">OB</label>
+                            <label for="">C/F</label>
                             <input type="text" />
                         </div>
+
                         <div class="button-edit-form form-edit">
                             <button class="buttons-forms but-edit">edit</button>
                             <button class="buttons-forms but-cancel close">Cancelar</button>
@@ -206,6 +152,7 @@
                 </div>
             </div>
         </div>
+
 @endsection
 
 @section('scripts')
@@ -236,4 +183,3 @@
             };
 </script>
 @endsection
-

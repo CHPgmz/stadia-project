@@ -26,4 +26,17 @@ Route::get('dev-materiales', function () {
     return view('pages.table-devmateriales');
 })->name('materiales');
 
+
 Route::get('tecnicos', [TecnicosController::class, 'index'])->name('tecnicos.todo');
+
+Route::get('liquidadas', function () {
+    return view('pages.table-osliquidadas');
+})->name('os-liquidadas');
+
+Route::get('quejas', function () {
+    return view('pages.table-quejas');
+})->name('quejas.todo');
+
+Route::get('administradores', function () {
+    return view('pages.table-admins');
+})->name('admins.todo');

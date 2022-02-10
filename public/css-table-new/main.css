@@ -1,316 +1,129 @@
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-body, html {
-	height: 100%;
-   font-family: 'Nunito Sans', sans-serif;
-}
-
-/* ------------------------------------ */
-a {
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-}
-
-a:focus {
-	outline: none !important;
-}
-
-a:hover {
-	text-decoration: none;
+body,
+html {
+    height: 100%;
+    background-color: #edf1f5;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 /* ------------------------------------ */
-h1,h2,h3,h4,h5,h6 {margin: 0px;}
 
-p {margin: 0px;}
-
-ul, li {
-	margin: 0px;
-	list-style-type: none;
+.content {
+    width: 90%;
+    margin: 40px auto 0px auto;
+    background-color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 3px;
 }
 
-
-/* ------------------------------------ */
-/*input {
-  display: block;
-	outline: none;
-	border: none !important;
-}*/
-
-textarea {
-  display: block;
-  outline: none;
+.title h3 {
+    padding: 10px 0px;
+    color: #313131;
+    font-size: 18px;
+    line-height: 30px;
 }
 
-textarea:focus, input:focus {
-  border-color: transparent !important;
+.new-reg {
+    padding: 4px 10px;
+    background: #29b6f6;
+    text-decoration: none;
+    color: #000;
+    border-radius: 3px;
+}
+.content-body table {
+    margin-top: 20px;
+    width: 100%;
 }
 
-/* ------------------------------------ */
-/*button {
-	outline: none !important;
-	border: none;
-	background: transparent;
-}*/
-
-button:hover {
-	cursor: pointer;
-}
-
-iframe {
-	border: none !important;
-}
-
-/*//////////////////////////////////////////////////////////////////
-[ Scroll bar ]*/
-.js-pscroll {
-  position: relative;
-  overflow: hidden;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-th {
+[class^="tr-"] th,
+td {
     text-align: left;
-    
-}
-.table100 .ps__rail-y {
-  width: 9px;
-  background-color: transparent;
-  opacity: 1 !important;
-  right: 5px;
+    color: #3e5569;
+    font-size: 16px;
+    border-bottom: 1px solid #e1eaee;
+    padding: 6px 0;
 }
 
-.table100 .ps__rail-y::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: #ebebeb;
-  border-radius: 5px;
-  width: 100%;
-  height: calc(100% - 30px);
-  left: 0;
-  top: 15px;
+.tr-head th {
+    line-height: 14px;
+}
+.tr-body {
+    line-height: 24px;
+}
+.id-td {
+    width: 3%;
 }
 
-.table100 .ps__rail-y .ps__thumb-y {
-  width: 100%;
-  right: 0;
-  background-color: transparent;
-  opacity: 1 !important;
+[class^="td-"] {
+    width: 13%;
+}
+[class^="tdv-"]{
+    width: 14%;
+   /* border:1px solid black;*/
 }
 
-.table100 .ps__rail-y .ps__thumb-y::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: #cccccc;
-  border-radius: 5px;
-  width: 100%;
-  height: calc(100% - 30px);
-  left: 0;
-  top: 15px;
+[class^="tdq-"]{
+    width: 18%;
 }
 
-
-/*//////////////////////////////////////////////////////////////////
-[ Table ]*/
-
-/*.limiter {
-  
-  margin: 0 auto;
-}*/
-
-.container-table100 {
-  width: 100%;
-  margin: auto;
-  background: #fff;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  /*padding: 10px 10px;*/
+[class^="tdt-"]{
+    width: 16%;
 }
 
-.wrap-table100 {
-  width: 95%;
+[class^="tda-"]{
+    width: 16%;
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ Table ]*/
-.table100 {
-  background-color: #fff;
+.td-2 {
+  width: 17%;
 }
 
-table {
-  width: 100%;
+.td-6, 
+.td-7 {
+  width: 10%;
 }
 
-th, td {
-  font-weight: unset;
- /* padding-right: 10px; */
+.tdv-2{
+    width: 14%;
+}
+.tdv-6{
+    width: 24%;
 }
 
-.column1 {
-  width: 16%;
-  padding-left: 20px;
+.tdq-2,
+.tdq-3,
+.tdq-6{
+    width: 10%;
 }
 
-.columnid {
-  width: 2%;
+[class^="button-"] {
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: none;
+    font-size: 12px;
+}
+.table-body tr:nth-child(even) {
+    background-color: #f8f6ff;
 }
 
-.columnob{
- width: 22%;
+.button-edit {
+    background-color: #0ffff8;
 }
 
-.column2 {
-  width: 15%;
+.button-delete {
+    background-color: #ff1744;
 }
-
-.column3 {
-  width: 11%;
-}
-
-.column4 {
-  width: 11%;
-}
-
-.column5 {
-  width: 11%;
-}
-.column6 {
-width: 09%;
-}
-
-.column7 {
-width: 11%;
-}
-
-.column8 {
-    width: 08%;
-}
-
-.column-m1 {
-  width: 3%;
-  padding-left: 5px;
-}
-.column-m6 {
-  width: 22%;
-}
- /*.table100-head th {
-   padding-top: 10px;
-  padding-bottom: 10px;
-
-}*/
-
-.table100-body td {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-size: 20px;
-}
-
-/*==================================================================
-[ Fix header ]*/
-.table100 {
-  position: relative;
-  padding-top: 50px;
-}
-
-.table100-head {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.table100-body {
-  max-height: 585px;
-  overflow: auto;
-}
-
-
-/*==================================================================
-[ Ver1 ]*/
-
-.table100.ver1 th {
-  font-size: 17px;
-  font-weight: 600;
-  color: #fff;
-  line-height: 2.5;
-  background-color: #6c7ae0;
-}
-
-.table100.ver1 td {
-  font-size: 16px;
-  color: #808080;
-  line-height: 1.4;
-}
-
-.table100.ver1 .table100-body tr:nth-child(even) {
-  background-color: #f8f6ff;
-}
-
-/*---------------------------------------------*/
-
-.table100.ver1 {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-}
-
-.table100.ver1 .ps__rail-y {
-  right: 5px;
-}
-
-.table100.ver1 .ps__rail-y::before {
-  background-color: #ebebeb;
-}
-
-.table100.ver1 .ps__rail-y .ps__thumb-y::before {
-  background-color: #cccccc;
-}
-
-.register {
-  padding: 6px 8px;
-  background: #6c7ae0;
-  border-radius: 03px;
-}
-.register {
-  color: #fff;
-  text-decoration: none;
-}
-
-.options-registers {
-  width: 95%;
-  margin: 20px auto;
-}
-
 
 /*
  * Aqui empieza el estilo del estatus de la tabla
@@ -318,56 +131,38 @@ width: 11%;
 
 /* ---------------------------------*/
 
-
-.table-body tbody td.status .waiting {
+tbody td.status .waiting {
     background: #fdf5dd;
     color: #cfa00c;
 }
 
-.table-body tbody td.status span {
+tbody .status .active {
+    background: #cff6dd;
+    color: #1fa750;
+}
+
+tbody td.status span {
     position: relative;
     border-radius: 30px;
-    padding: 4px 10px 4px 25px;
+    padding: 4px 06px 2px 25px;
+}
+
+tbody .status span:after {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    border-radius: 50%;
 }
 
 
-  .table-body tbody td.status span {
-    position: relative;
-    border-radius: 30px;
-    padding: 4px 10px 4px 25px; }
-    .table-body tbody td.status span:after {
-      position: absolute;
-      top: 9px;
-      left: 10px;
-      width: 10px;
-      height: 10px;
-      content: '';
-      border-radius: 50%; }
-  .table-body tbody td.status .active {
-    background: #cff6dd;
-    color: #1fa750; }
-    .table-body tbody td.status .active:after {
-      background: #23bd5a; }
-  .table-body tbody td.status .waiting {
-    background: #fdf5dd;
-    color: #cfa00c; }
-    .table-body tbody td.status .waiting:after {
-      background: #f2be1d; }
-  .table-body tbody td .img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%; }
-  .table-body tbody td .email span {
-    display: block; }
-    .table-body tbody td .email span:last-child {
-      font-size: 12px;
-      color: rgba(0, 0, 0, 0.3); }
-  .table-body tbody td .close span {
-    font-size: 12px;
-    color: #dc3545; }
+tbody td.status .active:after {
+    background: #23bd5a;
+}
 
-  .table-body tbody td.status .active {
-    background: #cff6dd;
-    color: #1fa750;
+tbody td.status .waiting:after {
+    background: #f2be1d;
 }
 

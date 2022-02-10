@@ -1,19 +1,15 @@
 @extends('menu_home')
 
-@section('estilos')
-
+@section('estilos')    
 <link rel="stylesheet" href="{{asset('css-table-new/main.css')}}">
-<!-- <link rel="stylesheet" href="{{asset('css-table-new/style-status.css')}}"> -->
-<!-- <link rel="stylesheet" href="{{asset('css/style-modal.css')}}"> -->
-
-
 @endsection
+
 
 @section('contenido')
 
 <div class="content">
 			<div class="title">
-				<h3>Tabla: Tecnicos</h3>
+				<h3>Tabla: Adminsitradores</h3>
 				<a href="#" class="new-reg">Nuevo Registro</a>
 			</div>
 			<div class="content-body">
@@ -21,23 +17,21 @@
 					<thead class="table-thead">
 					<tr class="tr-head">
 						<th class="id-td">ID#</th>
-						<th class="tdt-2">Nom. Tecnico</th>
-						<th class="tdt-3">Apellidos</th>
-						<th class="tdt-4">PIC</th>
-						<th class="tdt-5">Num. Telefono</th>
-						<th class="tdt-6">Correo</th>
-						<th class="tdt-7">ACCIONES</th>
+						<th class="tda-2">Usuario</th>
+						<th class="tda-3">Nombre</th>
+                  <th class="tda-4">Correo</th>
+						<th class="tda-5">Telefono</th>
+						<th class="tda-6">Acciones</th>
 					</tr>
 					</thead>
 					<tbody class="table-body">
 						<tr class="tr-body">
 							<td class="id-td">1</td>
-							<td class="tdt-2">Jose Alfredo</td>
-							<td class="tdt-3">Gomez Miranda</td>
-							<td class="tdt-4">JoseGomez21</td>
-							<td class="tdt-5">9192839373</td>
-							<td class="tdt-6">test-mail@gmail.com</td>
-							<td class="tdt-7">
+							<td class="tda-2">AlfredoGmz</td>
+							<td class="tda-3">Jose Alfredo</td>
+							<td class="tda-4">test-mail@gmail.com</td>
+							<td class="tda-5">9192839373</td>
+							<td class="tda-6">
 								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
 								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
 							</td>
@@ -49,7 +43,7 @@
 			</div>
 </div>
 
-<div id="myModal" class="modal mod-tec">
+<div id="myModal" class="modal mod-adm">
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
@@ -58,8 +52,8 @@
                 <div class="modal-body">
                     <form action="" class="form-obra">
                         <div class="form-edit">
-                            <label for="">Nom. Tecnico</label>
-                            <input  type="text" />
+                            <label for="">Usuario</label>
+                            <input class="form-input" type="text" />
                         </div>
                         <!--<div class="form-edit">
                             <label for="">Supervisor</label>
@@ -71,21 +65,18 @@
 									 </select>
                         </div>-->
                         <div class="form-edit">
-                            <label for="">Apellidos</label>
+                            <label for="">Nombre</label>
                             <input type="text"/>
                         </div>
                         <div class="form-edit">
-									<label for="">PIC</label>
-                            <input type="text" />
+									<label for="">Correo</label>
+                            <input type="gmail" />
                         </div>
                         <div class="form-edit">
                             <label for="">Num. Telefono</label>
                             <input type="number" />
                         </div>
-                        <div class="form-edit">
-                            <label for="">Correo</label>
-                            <input type="text" />
-                        </div>
+
 
                         <div class="button-edit-form form-edit">
                             <button class="buttons-forms but-edit">edit</button>
@@ -98,12 +89,11 @@
             </div>
         </div>
 
-
 @endsection
 
 
 @section('scripts')
-
+    
 <script >
             var modal = document.getElementById("myModal");
 

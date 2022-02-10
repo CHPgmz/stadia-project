@@ -24,7 +24,7 @@
             <div class="logo-user">
                 <div><img src="{{ asset('logo/LOGO-SEM.jpg') }}" alt="" width="80px"></div>
                 <div class="user-auth">
-                        <li class="dropdown"><a href="#" onclick="myFunction2()" class="user-name" role="button">Alfredo</a>
+                        <li class="dropdown"><a href="#" onclick="myFunction2()" class="user-name" role="button"><i class="far fa-user"></i>Alfredo</a>
                         <div id="myDropdown2" class="dropdown-content2">
                             <a href="#home">Profile</a>
     <a href="#about">Logout</a>
@@ -59,7 +59,7 @@
                         <li class="dropdown"><a href="#" onclick="myFunction7()" class="dropbtn7" role="button">OS Liquidadas</a>
                         <div id="myDropdown7" class="dropdown-content7">
                             <a href="#home">Registrar</a>
-                            <a href="{{ route('tecnicos.todo') }}">Consultar</a>
+                            <a href="{{ route('os-liquidadas') }}">Consultar</a>
                             <!--<a href="#contact">Contact</a> -->
                           </div>
                         </li>
@@ -67,7 +67,7 @@
                         <li class="dropdown"><a href="#" onclick="myFunction8()" class="dropbtn8" role="button">Quejas</a>
                         <div id="myDropdown8" class="dropdown-content8">
                             <a href="#home">Registrar</a>
-                            <a href="{{ route('tecnicos.todo') }}">Consultar</a>
+                            <a href="{{ route('quejas.todo') }}">Consultar</a>
                             <!--<a href="#contact">Contact</a> -->
                           </div>
                         </li>
@@ -91,7 +91,7 @@
                         <li class="dropdown"><a href="#" onclick="myFunction5()" class="dropbtn5" role="button">Adminsitradores</a>
                         <div id="myDropdown5" class="dropdown-content5">
                             <a href="#home">Registrar</a>
-                            <a href="{{ route('tecnicos.todo') }}">Consultar</a>Consultar
+                            <a href="{{ route('admins.todo') }}">Consultar</a>
                             <!--<a href="#contact">Contact</a> -->
                           </div>
                         </li>                        

@@ -16,12 +16,16 @@ body {
  grid-column: 1/-1;
  display: flex;
  justify-content: space-between;
- background-color: white;
+ background-color: #edf1f5;
 }
 
 .fas {
  font-size: 30px;
  padding: 10px 10px;
+}
+.fa-home:before {
+    content: "\f015";
+    color: white;
 }
 .user-auth {
     color: black;
@@ -30,6 +34,12 @@ body {
 }
 .fas:hover {
     background-color: black;
+}
+
+.fa-user {
+    color: black;
+    font-size: 20px;
+    margin-right: 4px;
 }
 
 .menu-bar {
@@ -64,7 +74,7 @@ body {
 }
 
 [class^='dropbtn']:hover {
- background-color: black;
+ color: #C0D8C0;
 }
     
 
@@ -78,6 +88,9 @@ body {
 .user-name {
     margin-right: 50px;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
 }
 [class^='dropbtn']{
     color: white;
@@ -96,6 +109,9 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 2px;
+}
+.dropdown:hover [class^="dropdown-content"]{ 
+    display: block
 }
 .dropdown {
     position: relative;
@@ -136,6 +152,19 @@ body {
 }
 .mod-home{
     padding-top: 3px;
+}
+
+.mod-devm{
+    padding-top: 50px;
+}
+
+.mod-osl {
+    padding-top: 3px;
+}
+
+.mod-tec,
+.mod-adm{
+    padding-top: 50px;
 }
 
 .modal-custom {

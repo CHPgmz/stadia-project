@@ -1,4 +1,4 @@
-function myFunction() {
+/*function myFunction() {
 
   document.getElementById("myDropdown").classList.toggle("show");  
 }
@@ -32,7 +32,7 @@ function myFunction7(){
 function myFunction8(){
 
     document.getElementById("myDropdown8").classList.toggle("show");
-}
+}*/
 
 window.onclick = function(event) {
   if (!event.target.matches('.user-name')) {
