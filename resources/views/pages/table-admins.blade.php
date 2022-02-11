@@ -1,16 +1,15 @@
 @extends('menu_home')
 
-@section('estilos')    
-<link rel="stylesheet" href="{{asset('css-table-new/main.css')}}">
+@section('estilos')
+<link rel="stylesheet" href="{{ asset('css/style-table.css') }}">
 @endsection
-
 
 @section('contenido')
 
 <div class="content">
 			<div class="title">
 				<h3>Tabla: Adminsitradores</h3>
-				<a href="#" class="new-reg">Nuevo Registro</a>
+				<a href="#" class="new-reg"><span>Nuevo Registro</span></a>
 			</div>
 			<div class="content-body">
 				<table>
@@ -93,7 +92,6 @@
 
 
 @section('scripts')
-    
 <script >
             var modal = document.getElementById("myModal");
 

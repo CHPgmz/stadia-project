@@ -1,119 +1,75 @@
 @extends('menu_home')
 
 @section('estilos')
-
-<!--<link rel="stylesheet" href="{{ asset('css-table-new/util.css') }}">-->
-<link rel="stylesheet" href="{{asset('css-table-new/main.css')}}">
-<!--<link rel="stylesheet" href="{{asset('css-table-new/style-status.css')}}"> -->
-<!-- <link rel="stylesheet" href="{{asset('css/style-modal.css')}}"> -->
-<!--<style type="text/css" >
-.button-edit {
-	background: #81d4fa;
-	width: 80px;
-	height: 23px;
-	border: none;
-	border-radius: 3px;
-}
-.button-edit:hover {
-	border: 1px solid yellow;
-}
-.button-delete:hover {
-	border: 1px solid green;
-}
-
-.button-edit > i{
-	margin-right: 4px;
-}
-.button-delete > i{
-	margin-right: 4px;
-}
-.button-delete {
-	background: #e53935;
-	width: 80px;
-	border: none;
-	height: 23px;
-	border-radius: 3px;
-}
-
-.name-obra {
-	font-weight: bold;
-	font-size: 12px;
-}
-</style>-->
-
+<link rel="stylesheet" href="{{ asset('css/style-table.css') }}">
 @endsection
 
 @section('contenido')
-<!--<div class="options-registers">
-	<a class="register" href="#">Registrar Obra</a>
-	<a class="register" href="#">Resgistrar Tecnico</a>
-	</div>-->
 
 <div class="content">
-			<div class="title">
-				<h3>Tabla: Obras</h3>
-				<a href="#" class="new-reg">Nuevo Registro</a>
-			</div>
-			<div class="content-body">
-				<table>
-					<thead class="table-thead">
-					<tr class="tr-head">
-						<th class="id-td">ID#</th>
-						<th class="td-2">Nom. OBRA</th>
-						<th class="td-3">Tip. OBRA</th>
-						<th class="td-4">ESTATUS</th>
-						<th class="td-5">SUPERVISOR</th>
-						<th class="td-6">F. INICIO</th>
-						<th class="td-7">F. TERM.</th>
-						<th class="td-8">ACCIONES</th>
-					</tr>
-					</thead>
-					<tbody class="table-body">
-						<tr class="tr-body">
-							<td class="id-td">1</td>
-							<td class="td-2">RDA Medical Baumachine</td>
-							<td class="td-3">RDA</td>
-							<td class="td-4 status"><span class="active">90% de pago</span></td>
-							<td class="td-5">Freddy</td>
-							<td class="td-6">12/01/2022</td>
-							<td class="td-7">18/01/2022</td>
-							<td class="td-8">
-								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
-								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-							</td>
-						</tr>
+    <div class="title">
+        <h3>Tabla: Obras</h3>
+        <a href="#" class="new-reg"><span>Nuevo Registro</span></a>
+    </div>
+    <div class="content-body">
+        <table>
+            <thead class="table-thead">
+                <tr class="tr-head">
+                    <th class="id-td">ID#</th>
+                    <th class="td-2">Nom. OBRA</th>
+                    <th class="td-3">Tip. OBRA</th>
+                    <th class="td-4">ESTATUS</th>
+                    <th class="td-5">SUPERVISOR</th>
+                    <th class="td-6">F. INICIO</th>
+                    <th class="td-7">F. TERM.</th>
+                    <th class="td-8">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <tr class="tr-body">
+                    <td class="id-td">1</td>
+                    <td class="td-2">RDA Medical Baumachine</td>
+                    <td class="td-3">RDA</td>
+                    <td class="td-4 status"><span class="active">90% de pago</span></td>
+                    <td class="td-5">Freddy</td>
+                    <td class="td-6">12/01/2022</td>
+                    <td class="td-7">18/01/2022</td>
+                    <td class="td-8">
+                        <button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
+                        <button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
+                    </td>
+                </tr>
 
-						<tr class="tr-body">
-							<td class="id-td">2</td>
-							<td class="td-2">PVU001 Ipsum deserunt</td>
-							<td class="td-3">RDA</td>
-							<td class="td-4 status"><span class="waiting">70% de pago</span></td>
-							<td class="td-5">Freddy</td>
-							<td class="td-6">12/01/2022</td>
-							<td class="td-7">18/01/2022</td>
-							<td class="td-8">
-								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
-								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-							</td>
-						</tr>
-						<tr class="tr-body">
-							<td class="id-td">3</td>
-							<td class="td-2">Primera Obra</td>
-							<td class="td-3">RDA</td>
-							<td class="td-4 status"><span class="active">Cobro de 90%</span></td>
-							<td class="td-5">Freddy</td>
-							<td class="td-6">12/01/2022</td>
-							<td class="td-7">18/01/2022</td>
-							<td class="td-8">
-								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
-								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+                <tr class="tr-body">
+                    <td class="id-td">2</td>
+                    <td class="td-2">PVU001 Ipsum deserunt</td>
+                    <td class="td-3">RDA</td>
+                    <td class="td-4 status"><span class="waiting">70% de pago</span></td>
+                    <td class="td-5">Freddy</td>
+                    <td class="td-6">12/01/2022</td>
+                    <td class="td-7">18/01/2022</td>
+                    <td class="td-8">
+                        <button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
+                        <button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
+                    </td>
+                </tr>
+                <tr class="tr-body">
+                    <td class="id-td">3</td>
+                    <td class="td-2">Primera Obra</td>
+                    <td class="td-3">RDA</td>
+                    <td class="td-4 status"><span class="active">Cobro de 90%</span></td>
+                    <td class="td-5">Freddy</td>
+                    <td class="td-6">12/01/2022</td>
+                    <td class="td-7">18/01/2022</td>
+                    <td class="td-8">
+                        <button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
+                        <button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
 <div id="myModal" class="modal mod-home">
             <!-- Modal content -->

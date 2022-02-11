@@ -1,12 +1,7 @@
 @extends('menu_home')
 
 @section('estilos')
-
-<link rel="stylesheet" href="{{asset('css-table-new/main.css')}}">
-<!-- <link rel="stylesheet" href="{{asset('css-table-new/style-status.css')}}"> -->
-<!-- <link rel="stylesheet" href="{{asset('css/style-modal.css')}}"> -->
-
-
+<link rel="stylesheet" href="{{ asset('css/style-table.css') }}">
 @endsection
 
 @section('contenido')
@@ -14,7 +9,7 @@
 <div class="content">
 			<div class="title">
 				<h3>Tabla: Tecnicos</h3>
-				<a href="#" class="new-reg">Nuevo Registro</a>
+				<a href="#" class="new-reg"><span>Nuevo Registro</span></a>
 			</div>
 			<div class="content-body">
 				<table>
