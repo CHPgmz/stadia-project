@@ -7,6 +7,7 @@
 	<title>Index</title>
   @yield('estilos')
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+	<script src="https://kit.fontawesome.com/2025855716.js" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -31,34 +32,37 @@
 
 	<nav class="navbar" id="id-nav">
 		<div class="logo">
-			<img src="{{ asset('logo/LOGO-SEM.jpg') }}" alt="" width="100%" height="70px" class="img-logo">
+			<img src="{{ asset('logo/LOGO-SEM3.jpg') }}" alt="" width="100%" height="70px" class="img-logo">
 		</div>
 		<div class="dashboard">
 			<ul class="dashboard-options">
-				
+
+				<li class="dropdown">
+					<a href="{{ route('home') }}" class="dropbtn" role="button"><i class="fas fa-home"></i>Home</a>
+				</li>
 				<li class="dropdown">
 					<a href="#" class="dropbtn" role="button" id="home"><i class="fa fa-table"></i> Obras</a>
 					<div id="myDropdown" class="dropdown-content">
 						<a href="#">Registrar</a>
-						<a href="{{ route('home') }}">Consultar</a>
+						<a href="{{ route('obras.todo') }}">Consultar</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="mtr"><i class="fa fa-table"></i>Materiales</a>
+					<a href="#" class="dropbtn" role="button" id="mtr"><i class="fas fa-tools"></i></i>Materiales</a>
 					<div id="myDropdown2" class="dropdown-content">
 						<a href="#">Registrar</a>
 						<a href="{{ route('materiales') }}">Consultar</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="osl"><i class="fa fa-table"></i>OS Liquidadas</a>
+					<a href="#" class="dropbtn" role="button" id="osl"><i class="fas fa-clipboard-check"></i>OS Liquidadas</a>
 					<div id="myDropdown3" class="dropdown-content">
 						<a href="#">Registrar</a>
 						<a href="{{ route('os-liquidadas') }}">Consultar</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="qjas"><i class="fa fa-table"></i>Quejas</a>
+					<a href="#" class="dropbtn" role="button" id="qjas"><i class="fas fa-clipboard-list"></i>Quejas</a>
 					<div id="myDropdown4" class="dropdown-content">
 						<a href="#">Registrar</a>
 						<a href="{{ route('quejas.todo') }}">Consultar</a>
@@ -68,22 +72,25 @@
 					<a href="#" class="dropbtn" role="button" id="cdr"><i class="fa fa-table"></i>Cuadrillas</a>
 					<div id="myDropdown5" class="dropdown-content">
 						<a href="#">Registrar</a>
-						<a href="#">Consultar</a>
+						<a href="{{ route('cuadrillas.todo') }}">Consultar</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="tcn"><i class="fa fa-table"></i>Tecnicos</a>
+					<a href="#" class="dropbtn" role="button" id="tcn"><i class="fas fa-users"></i>Tecnicos</a>
 					<div id="myDropdown6" class="dropdown-content">
 						<a href="#">Registrar</a>
 						<a href="{{ route('tecnicos.todo') }}">Consultar</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="adm"><i class="fa fa-table"></i>Administradores</a>
+					<a href="#" class="dropbtn" role="button" id="adm"><i class="fas fa-users-cog"></i>Administradores</a>
 					<div id="myDropdown7" class="dropdown-content">
 						<a href="#">Registrar</a>
 						<a href="{{ route('admins.todo') }}">Consultar</a>
 					</div>
+				</li>
+				<li class="dropdown">
+					<a href="{{ route('home') }}" class="dropbtn" role="button"><i class="fas fa-sign-out"></i></i></i>Logout</a>
 				</li>
 			</ul>
 		</div>
@@ -102,7 +109,8 @@
 	<script src="{{ asset('scripts/jquery-demo.js') }}"></script>
 	<!--<script src="https://kit.fontawesome.com/2ead8049d9.js" crossorigin="anonymous"></script>-->
   @yield('scripts')
-  <script type="text/javascript" src="{{ asset('scripts/font-icons.js') }}"></script>
+
+  
   <script type="text/javascript" src="{{ asset('scripts/modal.js') }}"></script>
 </body>
 

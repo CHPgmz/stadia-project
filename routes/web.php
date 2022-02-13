@@ -1,7 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TecnicosController;
+use App\Http\Controllers\CuadrillasController;
+use App\Http\Controllers\DevmaController;
+use App\Http\Controllers\ObrasController;
+use App\Http\Controllers\OslController;
+use App\Http\Controllers\QuejasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,21 +28,17 @@ Route::get('home', function () {
     return view('home');
 })->name('home');
 
-Route::get('dev-materiales', function () {
-    return view('pages.table-devmateriales');
-})->name('materiales');
+Route::get('Obras', [ObrasController::class, 'index'])->name('obras.todo');
+
+Route::get('dev-materiales', [DevmaController::class, 'index'])->name('materiales');
 
 
 Route::get('tecnicos', [TecnicosController::class, 'index'])->name('tecnicos.todo');
 
-Route::get('liquidadas', function () {
-    return view('pages.table-osliquidadas');
-})->name('os-liquidadas');
+Route::get('liquidadas', [OslController::class, 'index'])->name('os-liquidadas');
 
-Route::get('quejas', function () {
-    return view('pages.table-quejas');
-})->name('quejas.todo');
+Route::get('quejas', [QuejasController::class, 'index'])->name('quejas.todo');
 
-Route::get('administradores', function () {
-    return view('pages.table-admins');
-})->name('admins.todo');
+Route::get('cuadrillas', [CuadrillasController::class, 'index'])->name('cuadrillas.todo');
+
+Route::get('administradores', [AdminsController::class, 'index'])->name('admins.todo');

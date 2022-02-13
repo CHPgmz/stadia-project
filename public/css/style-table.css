@@ -65,6 +65,10 @@ td {
     width: 16%;
 }
 
+[class^="tdc"]{
+    width: 12.12%;
+}
+
 .td-2 {
   width: 17%;
 }
