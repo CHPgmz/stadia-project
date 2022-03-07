@@ -31,11 +31,12 @@ Route::get('home', function () {
 Route::get('Obras', [ObrasController::class, 'index'])->name('obras.todo');
 
 Route::get('dev-materiales', [DevmaController::class, 'index'])->name('materiales');
-
+Route::get('dev-materiales-show', [DevmaController::class, 'showForm'])->name('materiales.form');
 
 Route::get('tecnicos', [TecnicosController::class, 'index'])->name('tecnicos.todo');
 
 Route::get('liquidadas', [OslController::class, 'index'])->name('os-liquidadas');
+Route::get('form-osliquidadas', [OslController::class, 'create'])->name('liquidadas.form');
 
 Route::get('quejas', [QuejasController::class, 'index'])->name('quejas.todo');
 

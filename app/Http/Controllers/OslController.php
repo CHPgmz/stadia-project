@@ -23,7 +23,7 @@ class OslController extends Controller
      */
     public function create()
     {
-        //
+        return view('forms.form-osliquidadas');
     }
 
     /**

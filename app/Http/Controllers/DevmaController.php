@@ -13,9 +13,13 @@ class DevmaController extends Controller
      */
     public function index()
     {
-    return view('pages.table-devmateriales');
+        return view('pages.table-devmateriales');
     }
 
+    public function showForm()
+    {
+        return view('forms.form-materiales');
+    }
     /**
      * Show the form for creating a new resource.
      *

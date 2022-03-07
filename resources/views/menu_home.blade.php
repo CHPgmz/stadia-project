@@ -6,10 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Index</title>
   @yield('estilos')
-	<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-	<script src="https://kit.fontawesome.com/2025855716.js" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<link rel="stylesheet" href="{{ asset('../../css/style.css') }}" />
+	<!--<script src="https://kit.fontawesome.com/2025855716.js" crossorigin="anonymous"></script>-->
+	<script src="{{ asset('scripts/jquery/2025855716.js') }}"></script>
+	<script src="{{ asset('scripts/jquery/jquery-1.11.1.min.js') }}"></script>
+	<script src="{{ asset('scripts/jquery/jquery-migrate-1.2.1.min.js') }}"></script>
+	<!--<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +34,7 @@
 
 	<nav class="navbar" id="id-nav">
 		<div class="logo">
-			<img src="{{ asset('logo/LOGO-SEM3.jpg') }}" alt="" width="100%" height="70px" class="img-logo">
+			<img src="{{ asset('logo/LOG.png') }}" alt="" width="90%" height="70px" class="img-logo" style="margin: auto">
 		</div>
 		<div class="dashboard">
 			<ul class="dashboard-options">
@@ -48,16 +50,16 @@
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="mtr"><i class="fas fa-tools"></i></i>Materiales</a>
+					<a href="#" class="dropbtn" role="button" id="mtr"><i class="fas fa-tools"></i>Materiales</a>
 					<div id="myDropdown2" class="dropdown-content">
-						<a href="#">Registrar</a>
+						<a href="{{ route('materiales.form') }}">Registrar</a>
 						<a href="{{ route('materiales') }}">Consultar</a>
 					</div>
 				</li>
 				<li class="dropdown">
 					<a href="#" class="dropbtn" role="button" id="osl"><i class="fas fa-clipboard-check"></i>OS Liquidadas</a>
 					<div id="myDropdown3" class="dropdown-content">
-						<a href="#">Registrar</a>
+						<a href="{{ route('liquidadas.form') }}">Registrar</a>
 						<a href="{{ route('os-liquidadas') }}">Consultar</a>
 					</div>
 				</li>
