@@ -9,7 +9,7 @@
 <div class="content">
 			<div class="title">
 				<h3>Tabla: OS Liquidadas</h3>
-				<a href="#" class="new-reg"><span>Nuevo Registro</span></a>
+				<a href="{{ route('liquidadas.form') }}" class="new-reg"><span>Nuevo Registro</span></a>
 			</div>
 			<div class="content-body">
 				<table>
@@ -26,47 +26,21 @@
 					</tr>
 					</thead>
 					<tbody class="table-body">
+                   @foreach($todoL as $item)
 						<tr class="tr-body">
-							<td class="id-td">1</td>
-							<td class="tdl-2">Tuxtla</td>
-							<td class="tdl-3">01/02/2022</td>
-							<td class="tdl-4">961829754</td>
-							<td class="tdl-5">De la cruz Ballinas Ricardo</td>
-							<td class="tdl-6">Gerardo Lopez Vazquez</td>
-                     <td class="tdl-7">XAM0005FO</td>
+                      <td class="id-td">{{ $item->id }}</td>
+							<td class="tdl-2">{{ $item->estado }}</td>
+							<td class="tdl-3">{{ $item->fecha }}</td>
+							<td class="tdl-4">{{ $item->telefono }}</td>
+							<td class="tdl-5">{{ $item->nombre_cliente }}</td>
+							<td class="tdl-6">{{ $item->name_tecnico }}</td>
+                     <td class="tdl-7">{{ $item->distrito }}</td>
 							<td class="tdl-8">
 								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
 								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
 							</td>
 						</tr>
-						<tr class="tr-body">
-							<td class="id-td">1</td>
-							<td class="tdl-2">Tuxtla</td>
-							<td class="tdl-3">01/02/2022</td>
-							<td class="tdl-4">961829754</td>
-							<td class="tdl-5">De la cruz Ballinas Ricardo</td>
-							<td class="tdl-6">Gerardo Lopez Vazquez</td>
-                     <td class="tdl-7">XAM0005FO</td>
-							<td class="tdl-8">
-								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
-								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-							</td>
-						</tr>
-						<tr class="tr-body">
-							<td class="id-td">1</td>
-							<td class="tdl-2">Tuxtla</td>
-							<td class="tdl-3">01/02/2022</td>
-							<td class="tdl-4">961829754</td>
-							<td class="tdl-5">De la cruz Ballinas Ricardo</td>
-							<td class="tdl-6">Gerardo Lopez Vazquez</td>
-                     <td class="tdl-7">XAM0005FO</td>
-							<td class="tdl-8">
-								<button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
-								<button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-							</td>
-						</tr>
-
-
+                    @endforeach
 					</tbody>
 				</table>
 			</div>

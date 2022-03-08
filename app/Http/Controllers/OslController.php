@@ -13,7 +13,8 @@ class OslController extends Controller
      */
     public function index()
     {
-        return view('pages.table-osliquidadas');
+        $todoL = \App\Models\OsLiquidadas::simplePaginate(15);
+        return view('pages.table-osliquidadas', compact('todoL'));
     }
 
     /**
@@ -34,7 +35,21 @@ class OslController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newLiqui = new \App\Models\OsLiquidadas;
+        $newLiqui->estado = $request->select;
+        $newLiqui->fecha = $request->fecha;
+        $newLiqui->telefono = $request->telefono;
+        $newLiqui->nombre_cliente = $request->nombre_cliente;
+        $newLiqui->name_tecnico = $request->nombre_tecnico;
+        $newLiqui->pic_tecnico = $request->pic_tecnico;
+        $newLiqui->metros_instalacion = $request->metros_instalacion;
+        $newLiqui->numero_os = $request->numero_os;
+        $newLiqui->pisaplex = $request->pisaplex;
+        $newLiqui->distrito = $request->distrito;
+        $newLiqui->terminal = $request->terminal;
+        $newLiqui->save();
+
+        return back()->with('status', 'Se ha registrado correctamente');
     }
 
     /**

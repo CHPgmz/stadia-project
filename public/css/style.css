@@ -550,6 +550,14 @@ i[class="fas fa-clipboard-list icon-quejas"]{
     border: 1px solid #c9ced8;
     border-radius: 5px;
 }
+.form-osliquidadas {
+    width: 90%;
+    margin: 40px auto;
+    border: 1px solid #c9ced8;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .div-form {
     width: 90%;
@@ -558,10 +566,22 @@ i[class="fas fa-clipboard-list icon-quejas"]{
     display: flex;
     flex-direction: column;
 }
+    
+.div-form-two {
+    width: 40%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+} 
+
+[class^="div-form"] > label {
+    font-weight: 600;
+}
 .div-form > label {
     font-weight: 600;
 }
-.div-form > input {
+
+[class^="div-form"] > input {
     height: 35px;
     border:1px solid #ced4da;
     padding-left:10px;
@@ -569,23 +589,26 @@ i[class="fas fa-clipboard-list icon-quejas"]{
     border-radius: 3px;
 }
 
-.div-form > select {
+[class^="div-form"] > select {
     height: 35px;
     border:1px solid #06d9d7;
     padding-left:10;
     font-size: 16px;
 }
+
 select {
     border: 1px solid #06d9d7;
 }
-.div-form > select::focus {
+
+[class^="div-form"] > select::focus {
     border: 1px solid #06d9d7;
 }
 
-.div-form > input:hover {
+[class^="div-form"] > input:hover {
     border: 2px solid #00d0ff;
 }
-.div-form > input:focus { 
+
+[class^="div-form"] > input:focus { 
     border: 1px solid #06d9d7;
 }
 
