@@ -13,7 +13,8 @@ class DevmaController extends Controller
      */
     public function index()
     {
-        return view('pages.table-devmateriales');
+        $todoMtr = \App\Models\Materiales::simplePaginate(15);
+        return view('pages.table-devmateriales', compact('todoMtr'));
     }
 
     public function showForm()
@@ -27,7 +28,6 @@ class DevmaController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -38,6 +38,15 @@ class DevmaController extends Controller
      */
     public function store(Request $request)
     {
+        $insMtr = new \App\Models\Materiales;
+        $insMtr->name_obra = $request->name_obra;
+        $insMtr->supervisor = $request->supervisor;
+        $insMtr->ob = $request->ob;
+        $insMtr->estatus = $request->estatus;
+        $insMtr->observaciones = $request->observaciones;
+        $insMtr->save();
+
+        return back()->with('status', 'Se ha registrado correctamente');
         //
     }
 
