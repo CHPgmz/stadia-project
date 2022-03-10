@@ -79,9 +79,17 @@ class DevmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request/*, $id*/)
     {
-        //
+        $mtrUpdate = \App\Models\Materiales::findOrFail($request->obra_id);
+        $mtrUpdate->name_obra = $request->name_obra;
+        $mtrUpdate->supervisor = $request->name_super;
+        $mtrUpdate->ob = $request->ob;
+        $mtrUpdate->estatus = $request->estatus;
+        $mtrUpdate->observaciones = $request->observaciones;
+        $mtrUpdate->save();
+
+        return back()->with('status', 'Datos moficados con exito');
     }
 
     /**

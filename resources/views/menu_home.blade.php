@@ -109,6 +109,7 @@
 
 	<script src="{{ asset('scripts/nav-dashboard.js') }}"></script>
 	<script src="{{ asset('scripts/jquery-demo.js') }}"></script>
+	<script src="{{ asset('scripts/sweetalert2.all.min.js') }}"></script>
 	<!--<script src="https://kit.fontawesome.com/2ead8049d9.js" crossorigin="anonymous"></script>-->
   @yield('scripts')
 

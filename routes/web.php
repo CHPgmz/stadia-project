@@ -33,6 +33,7 @@ Route::get('Obras', [ObrasController::class, 'index'])->name('obras.todo');
 Route::get('dev-materiales', [DevmaController::class, 'index'])->name('materiales');
 Route::get('dev-materiales-show', [DevmaController::class, 'showForm'])->name('materiales.form');
 Route::post('/dev-mtr-insert', [DevmaController::class, 'store'])->name('materiales.insert');
+Route::post('/dev-mtr-update', [DevmaController::class, 'update'])->name('materiales.update');
 
 Route::get('tecnicos', [TecnicosController::class, 'index'])->name('tecnicos.todo');
 
