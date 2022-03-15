@@ -55,15 +55,15 @@
        <input type="date" name="fecha" required>
      </div>
      <div class="div-form-two">
-       <label for="">Num. Telefono</label>
+       <label for="">Numero de Telefono</label>
        <input type="tel" name="telefono" placeholder="9169999999" maxlength="10" required>
      </div>
      <div class="div-form-two">
-       <label for="">Nom. Cliente</label>
+       <label for="">Nombre del Cliente</label>
        <input type="text" name="nombre_cliente" placeholder="David" required>
      </div>
      <div class="div-form-two">
-       <label for="">Nom. Tecnico</label>
+       <label for="">Nombre del Tecnico</label>
        <input type="text" name="nombre_tecnico" placeholder="Oscar" required>
      </div>
      <div class="div-form-two">

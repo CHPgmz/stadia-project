@@ -20,15 +20,14 @@ use App\Http\Controllers\QuejasController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [ObrasController::class, 'home']);
 
-Route::get('home', function () {
-    return view('home');
-})->name('home');
+Route::get('home', [ObrasController::class, 'home'])->name('home');
 
 Route::get('Obras', [ObrasController::class, 'index'])->name('obras.todo');
+Route::get('obras-form', [ObrasController::class, 'create'])->name('obras.form');
+Route::post('/obras-insert', [ObrasController::class, 'store'])->name('obras.insert');
+Route::post('/obra-update', [ObrasController::class, 'update'])->name('obra.update');
 
 Route::get('dev-materiales', [DevmaController::class, 'index'])->name('materiales');
 Route::get('dev-materiales-show', [DevmaController::class, 'showForm'])->name('materiales.form');
@@ -42,6 +41,10 @@ Route::post('/os-liquidadas-insert', [OslController::class, 'store'])->name('liq
 Route::get('form-osliquidadas', [OslController::class, 'create'])->name('liquidadas.form');
 
 Route::get('quejas', [QuejasController::class, 'index'])->name('quejas.todo');
+Route::get('quejas-form', [QuejasController::class, 'create'])->name('quejas.form');
+Route::post('/quejas-save', [QuejasController::class, 'store'])->name('quejas.insert');
+Route::post('queja-update', [QuejasController::class, 'update'])->name('quejas.update');
+Route::delete('/queja-delete', [QuejasController::class, 'destroy'])->name('queja.delete');
 
 Route::get('cuadrillas', [CuadrillasController::class, 'index'])->name('cuadrillas.todo');
 

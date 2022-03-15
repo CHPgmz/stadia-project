@@ -45,7 +45,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropbtn" role="button" id="home"><i class="fa fa-table"></i> Obras</a>
 					<div id="myDropdown" class="dropdown-content">
-						<a href="#">Registrar</a>
+						<a href="{{ route('obras.form') }}">Registrar</a>
 						<a href="{{ route('obras.todo') }}">Consultar</a>
 					</div>
 				</li>
@@ -66,7 +66,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropbtn" role="button" id="qjas"><i class="fas fa-clipboard-list"></i>Quejas</a>
 					<div id="myDropdown4" class="dropdown-content">
-						<a href="#">Registrar</a>
+						<a href="{{ route('quejas.form') }}">Registrar</a>
 						<a href="{{ route('quejas.todo') }}">Consultar</a>
 					</div>
 				</li>

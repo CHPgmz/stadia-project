@@ -10,7 +10,7 @@
   <div class="text-danger" role="alert">
         {{Session::get('status')}}
   </div>
-  @endif
+@endif
     <div class="content">
         <div class="title">
             <h3>Tabla: Devolucion de materiales</h3>
