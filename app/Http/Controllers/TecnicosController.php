@@ -23,7 +23,7 @@ class TecnicosController extends Controller
      */
     public function create()
     {
-        //
+        return view('forms.form-tecnicos');
     }
 
     /**

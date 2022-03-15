@@ -14,7 +14,7 @@
        @csrf
      <div class="div-form-obras">
       <label for="">Nombre de la obra</label>
-      <input type="text" name="obra" id="obra" required>
+      <input type="text" name="obra" id="obra" autocomplete="off" required>
      </div>
      <div class="div-form-obras">
        <label for="">Estatus</label>
@@ -44,11 +44,11 @@
      </div>
      <div class="div-form-obras">
        <label for="">Observación</label>
-       <input type="text" name="observacion" id="observacion" required>
+       <input type="text" name="observacion" id="observacion" autocomplete="off" required>
      </div>
      <div class="div-form-obras">
        <label for="">Tipo de Obra</label>
-       <input type="t_obra" name="t_obra" id="t_obra" required>
+       <input type="t_obra" name="t_obra" id="t_obra"  autocomplete="off" required>
      </div>
      <div class="div-form-obras">
        <label for="">Supervisor</label>
@@ -60,19 +60,19 @@
      </div>
      <div class="div-form-obras">
        <label for="">Fecha de Inicio</label>
-       <input type="date" name="f_inicio" id="f_inicio" required>
+       <input type="date" name="f_inicio" id="f_inicio" autocomplete="off" required>
      </div>
      <div class="div-form-obras">
        <label for="">Fecha de Terminacion</label>
-       <input type="date" name="f_terminacion" id="f_terminacion" required>
+       <input type="date" name="f_terminacion" id="f_terminacion" autocomplete="off" required>
      </div>
      <div class="div-form-obras">
        <label for="">Dias Laborados</label>
-       <input type="text" name="d_laborados" id="d_laborados" required>
+       <input type="text" name="d_laborados" id="d_laborados" autocomplete="off" required>
      </div>
      <div class="div-form-obras">
        <label for="">Fecha Compromiso</label>
-       <input type="text" name="f_compromiso" id="f_compromiso" required>
+       <input type="text" name="f_compromiso" id="f_compromiso" autocomplete="off" required>
      </div>
      <div class="div-form-obras">
        <label for="">Documentos Fisicos</label>
@@ -97,27 +97,27 @@
      </div>
      <div class="div-form-obras">
        <label for="">PEP</label>
-       <input type="text" name="pep" id="pep" required>
+       <input type="text" name="pep" id="pep" autocomplete="off" required>
      </div>
      <div class="div-form-obras">
        <label for="">OPERACION</label>
-       <input type="text" name="operacion" id="operacion" required>
+       <input type="text" name="operacion" id="operacion" autocomplete="off" required>
      </div>
       <div class="div-form-obras">
         <label for="">OEI</label>
-        <input type="text" name="oei" id="oei" required>
+        <input type="text" name="oei" id="oei" autocomplete="off" required>
       </div>
       <div class="div-form-obras">
         <label for="">OE</label>
-        <input type="text" name="oe" id="oe" required>
+        <input type="text" name="oe" id="oe" autocomplete="off" required>
       </div>
       <div class="div-form-obras">
         <label for="">CTL/DTTO/RB/ACOMETIDA</label>
-        <input type="text" name="acomedida" id="acomedida" required>
+        <input type="text" name="acomedida" id="acomedida" autocomplete="off" required>
       </div>
       <div class="div-form-obras">
         <label for="">OB</label>
-        <input type="text" name="ob" id="ob" required>
+        <input type="text" name="ob" id="ob" autocomplete="off" required>
       </div>
       <div class="div-form-obras">
         <label for="">Material</label>
@@ -130,11 +130,11 @@
       </div>
       <div class="div-form-obras">
         <label for="">Observacion Material</label>
-        <input type="text" name="ob_material" id="ob_material" required>
+        <input type="text" name="ob_material" id="ob_material" autocomplete="off" required>
       </div>
       <div class="div-form-obras">
         <label for="">Tipo de Material</label>
-        <input type="text" name="t_material" id="t_material" required>
+        <input type="text" name="t_material" id="t_material" autocomplete="off" required>
       </div>
      <div class="div-form-obras">
        <button class="form-button" type="submit">Guardar</button>

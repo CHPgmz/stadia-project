@@ -80,7 +80,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropbtn" role="button" id="tcn"><i class="fas fa-users"></i>Tecnicos</a>
 					<div id="myDropdown6" class="dropdown-content">
-						<a href="#">Registrar</a>
+						<a href="{{ route('form.tecnicos') }}">Registrar</a>
 						<a href="{{ route('tecnicos.todo') }}">Consultar</a>
 					</div>
 				</li>

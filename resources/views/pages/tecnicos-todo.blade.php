@@ -9,7 +9,7 @@
 <div class="content">
 			<div class="title">
 				<h3>Tabla: Tecnicos</h3>
-				<a href="#" class="new-reg"><span>Nuevo Registro</span></a>
+				<a href="{{ route('form.tecnicos') }}" class="new-reg"><span>Nuevo Registro</span></a>
 			</div>
 			<div class="content-body">
 				<table>

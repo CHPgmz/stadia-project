@@ -58,7 +58,7 @@
     <div class="content">
         <div class="title">
             <h3>Tabla: Obras</h3>
-            <span>Ultimos 10 registros</span>
+            <span>Ultimos 05 registros</span>
         </div>
         <div class="content-body">
             <table>
@@ -85,14 +85,10 @@
                         <td class="td-7">{{ $item->fecha_terminacion }}</td>
 
                     </tr>
-                @endforeach
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-
-@endsection
-
-@section('scripts')
 
 @endsection

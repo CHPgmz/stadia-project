@@ -58,6 +58,7 @@
         </div>
     </div>
     {{ $todoMtr->links() }}
+    
     <div id="myModal" class="modal mod-devm" type="modal" role="dialog" aria-labelledby="myModalLabel">
         <!-- Modal content -->
         <div class="modal-content">
