@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tecnicos;
 
 class TecnicosController extends Controller
 {
@@ -34,7 +35,20 @@ class TecnicosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tecnico = new Tecnicos;
+        $tecnico->nombre_tec = $request->nom_tec;
+        $tecnico->apellidos = $request->apellidos;
+        $tecnico->pic = $request->pic;
+        $tecnico->curp = $request->curp;
+        $tecnico->num_telefono = $request->telefono;
+        $tecnico->correo = $request->correo;
+        $tecnico->ine = $request->ine;
+        $tecnico->nss = $request->nss;
+        $tecnico->direccion = $request->dir;
+        $tecnico->edad = $request->edad;
+        $tecnico->save();
+
+        return back()->with('status', 'Se ha registrado correctamente');
     }
 
     /**

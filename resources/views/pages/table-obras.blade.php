@@ -31,18 +31,69 @@
             width: 1060px;
             position: relative;
             overflow: auto;
-            border: 1px solid #666;
+            /* border: 1px solid #666; */
         }
+
         .table-obras {
+            margin-top: 20px;
             width: 150%;
         }
+
         .id-td {
-            widows: 5%;
+            widows: 2px;
         }
-         [class^="td-"]{
-             width: 10%;
-             text-align: center
-         }
+
+        [class^="td-"] {
+            width: 9%;
+            /* text-align: center */
+        }
+
+        /* [class^="tr-"] */
+        th,
+        td {
+            text-align: left;
+            color: #3e5569;
+            font-size: 16px;
+            border-bottom: 1px solid #e1eaee;
+            padding: 2px 3px;
+            /* width: 50px; */
+        }
+        .td-11 {
+            width: 4%;
+        }
+
+        .tr-head th {
+            line-height: 10px;
+        }
+
+        .tr-body {
+            line-height: 20px;
+        }
+
+        .td-13,
+        .td-14,
+        .td-15 {
+            width: 10%;
+        }
+
+        [class^="button-"] {
+            padding: 4px 10px;
+            border-radius: 3px;
+            border: none;
+            font-size: 12px;
+        }
+
+        .table-body tr:nth-child(even) {
+            background-color: #f8f6ff;
+        }
+
+        .button-edit {
+            background-color: #0ffff8;
+        }
+
+        .button-delete {
+            background-color: #ff1744;
+        }
 
     </style>
 @endsection
@@ -64,7 +115,7 @@
                 <thead class="table-thead">
                     <tr class="tr-head">
                         <th class="id-td">ID#</th>
-                        <th class="td-2" style="width: 100px;">Nom. OBRA</th>
+                        <th class="td-2">Nom. OBRA</th>
                         <th class="td-3">Estatus</th>
                         <th class="td-4">T de Estatus</th>
                         <th class="td-5">Observaciones</th>
@@ -100,7 +151,11 @@
                             <td class="td-14">{{ $item->operacion }}</td>
                             <td class="td-15">{{ $item->oei }}</td>
                             <td class="td-16">
-                                <button class="button-edit editbtn" data-tps="{{ $item->tipo_estatus }}"
+                                <button class="button-edit editbtn" data-ido="{{ $item->id }}"
+                                    data-obra="{{ $item->name_obra }}" data-tbra="{{ $item->tipo_obra }}"
+                                    data-estatus="{{ $item->estatus }}" data-super="{{ $item->supervisor }}"
+                                    data-finicio="{{ $item->fecha_inicio }}"
+                                    data-term="{{ $item->fecha_terminacion }}" data-tps="{{ $item->tipo_estatus }}"
                                     data-obs="{{ $item->observacion }}" data-dlabor="{{ $item->dias_laborados }}"
                                     data-fcompr="{{ $item->fecha_compromiso }}"
                                     data-dfisicos="{{ $item->doc_fisicos }}" data-fcc="{{ $item->fcc }}"
@@ -306,13 +361,14 @@
             var datos = $tr.children("td").map(function() {
                 return $(this).text();
             });
-            $('#obra_id').val(datos[0]);
-            $('#name_obra').val(datos[1]);
-            $('#t_obra').val(datos[2]);
-            $('#estatus').val(datos[3]);
-            $('#supervisor').val(datos[4]);
-            $('#f_start').val(datos[5]);
-            $('#f_end').val(datos[6]);
+            /* $('#obra_id').val(datos[0]); */
+            $('#obra_id').val($(this).data('ido'));
+            $('#name_obra').val($(this).data('obra'));
+            $('#t_obra').val($(this).data('tbra'));
+            $('#estatus').val($(this).data('estatus'));
+            $('#supervisor').val($(this).data('super'));
+            $('#f_start').val($(this).data('finicio'));
+            $('#f_end').val($(this).data('term'));
             $('#observacion').val(observacion);
             $('#t_estatus').val(tipo_est);
             $('#d_laborados').val(dias_labor);

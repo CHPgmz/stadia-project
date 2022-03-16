@@ -9,7 +9,7 @@
     @endif
 
     <main class="main-form">
-        <form action="#" {{-- class="form" --}} method="POST" class="form-osliquidadas">
+        <form action="{{ route('tecnico.add') }}" {{-- class="form" --}} method="POST" class="form-osliquidadas">
             @csrf
             <div class="div-form-obras">
                 <label for="">Nombre</label>

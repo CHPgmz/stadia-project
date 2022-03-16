@@ -36,6 +36,7 @@ Route::post('/dev-mtr-update', [DevmaController::class, 'update'])->name('materi
 
 Route::get('tecnicos', [TecnicosController::class, 'index'])->name('tecnicos.todo');
 Route::get('form-tecnicos', [TecnicosController::class, 'create'])->name('form.tecnicos');
+Route::post('/tecnico-add', [TecnicosController::class, 'store'])->name('tecnico.add');
 
 Route::get('liquidadas', [OslController::class, 'index'])->name('os-liquidadas');
 Route::post('/os-liquidadas-insert', [OslController::class, 'store'])->name('liquidadas.insert');
