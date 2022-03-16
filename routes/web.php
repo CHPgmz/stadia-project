@@ -48,5 +48,6 @@ Route::post('queja-update', [QuejasController::class, 'update'])->name('quejas.u
 Route::delete('/queja-delete', [QuejasController::class, 'destroy'])->name('queja.delete');
 
 Route::get('cuadrillas', [CuadrillasController::class, 'index'])->name('cuadrillas.todo');
+Route::get('cuadrilla-form', [CuadrillasController::class, 'create'])->name('cuadrilla.form');
 
 Route::get('administradores', [AdminsController::class, 'index'])->name('admins.todo');

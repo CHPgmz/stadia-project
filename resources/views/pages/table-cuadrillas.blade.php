@@ -12,17 +12,18 @@
         <a href="#" class="new-reg"><span>Nuevo Registro</span></a>
     </div>
     <div class="content-body">
-        <table>
+        <table {{-- style="display: block; overflow-x:auto;" --}} class="table-cuadrillas">
             <thead class="table-thead">
                 <tr class="tr-head">
                     <th class="id-td">ID#</th>
                     <th class="tdc-2">Nombre</th>
                     <th class="tdc-3">ID - INE</th>
                     <th class="tdc-4">NSS</th>
-                    <th class="tdc-5">Telefono</th>
-                    <th class="tdc-6">Dirección</th>
-                    <th class="tdc-7">Fe. Nacimiento</th>
-                    <th class="tdc-8">Edad</th>
+                    <th class="tdc-5">Curp</th>
+                    <th class="tdc-6">Telefono</th>
+                    <th class="tdc-7">Dirección</th>
+                    <th class="tdc-8">Fe. Nacimiento</th>
+                    <th class="tdc-9">Edad</th>
                     <th class="tdc-9">ACCIONES</th>
                 </tr>
             </thead>
@@ -32,44 +33,16 @@
                     <td class="tdc-2">Oscar</td>
                     <td class="tdc-3">N/A</td>
                     <td class="tdc-4">N/A</td>
-                    <td class="tdc-5">9612828972</td>
-                    <td class="tdc-6">Bario Nueva</td>
-                    <td class="tdc-7">04/1998</td>
-                    <td class="tdc-8">22</td>
+                    <td class="tdc-5">N/A</td>
+                    <td class="tdc-6">9612828972</td>
+                    <td class="tdc-7">Bario Nueva</td>
+                    <td class="tdc-8">04/1998</td>
+                    <td class="tdc-9">22</td>
                     <td class="tdc-9">
                         <button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
                         <button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
                     </td>
                 </tr>
-                <tr class="tr-body">
-                    <td class="id-td">1</td>
-                    <td class="tdc-2">Oscar</td>
-                    <td class="tdc-3">N/A</td>
-                    <td class="tdc-4">N/A</td>
-                    <td class="tdc-5">9612828972</td>
-                    <td class="tdc-6">Bario Nueva</td>
-                    <td class="tdc-7">04/1998</td>
-                    <td class="tdc-8">22</td>
-                    <td class="tdc-9">
-                        <button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
-                        <button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-                    </td>
-                </tr>
-                <tr class="tr-body">
-                    <td class="id-td">1</td>
-                    <td class="tdc-2">Oscar</td>
-                    <td class="tdc-3">N/A</td>
-                    <td class="tdc-4">N/A</td>
-                    <td class="tdc-5">9612828972</td>
-                    <td class="tdc-6">Bario Nueva</td>
-                    <td class="tdc-7">04/1998</td>
-                    <td class="tdc-8">22</td>
-                    <td class="tdc-9">
-                        <button class="button-edit" id="myBtn"><i class="far fa-edit"></i>Editar</button>
-                        <button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-                    </td>
-                </tr>
-
                 
             </tbody>
         </table>

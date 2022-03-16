@@ -23,7 +23,7 @@ class CuadrillasController extends Controller
      */
     public function create()
     {
-        //
+        return view('forms.form-cuadrillas');
     }
 
     /**

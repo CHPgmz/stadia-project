@@ -13,15 +13,15 @@
             @csrf
             <div class="div-form-obras">
                 <label for="">Nombre</label>
-                <input type="text" name="nom_tec" id="nom_tec"  autocomplete="off" required />
+                <input type="text" name="nom_cua" id="nom_cua"  autocomplete="off" required />
             </div>
             <div class="div-form-obras">
-                <label for="">Apellidos</label>
+                <label for="">ID - INE</label>
                 <input type="tex" name="apellidos" id="apellidos" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
-                <label for="">PIC</label>
-                <input type="text" name="pic" id="pic" autocomplete="off" required />
+                <label for="">NSS</label>
+                <input type="text" name="nss" id="nss" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">Curp</label>
@@ -32,20 +32,12 @@
                 <input type="tel" name="telefono" id="telefono" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
-                <label for="">Correo</label>
-                <input type="gmail" name="correo" id="correo" autocomplete="off" required />
-            </div>
-            <div class="div-form-obras">
-                <label for="">ID - INE</label>
-                <input type="text" name="ine" id="ine" autocomplete="off" required />
-            </div>
-            <div class="div-form-obras">
-                <label for="">NSS</label>
-                <input type="text" name="nss" id="nss" autocomplete="off" required />
-            </div>
-            <div class="div-form-obras">
                 <label for="">Dirección</label>
                 <input type="text" name="dir" id="dir" autocomplete="off" required />
+            </div>
+            <div class="div-form-obras">
+                <label for="">Fecha de Nacimiento</label>
+                <input type="date" name="f_nacimiento" id="f_nacimiento" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">Edad</label>

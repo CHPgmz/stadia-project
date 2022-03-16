@@ -73,7 +73,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropbtn" role="button" id="cdr"><i class="fa fa-table"></i>Cuadrillas</a>
 					<div id="myDropdown5" class="dropdown-content">
-						<a href="#">Registrar</a>
+						<a href="{{ route('cuadrilla.form') }}">Registrar</a>
 						<a href="{{ route('cuadrillas.todo') }}">Consultar</a>
 					</div>
 				</li>

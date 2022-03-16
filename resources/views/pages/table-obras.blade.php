@@ -1,7 +1,50 @@
 @extends('menu_home')
 
 @section('estilos')
-    <link rel="stylesheet" href="{{ asset('css/style-table.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/style-table.css') }}"> --}}
+    <style>
+        .content {
+            width: 98%;
+            margin: 10px auto 0px auto;
+            background-color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .title h3 {
+            padding: 10px 0px;
+            color: #313131;
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        .new-reg {
+            padding: 06px 16px;
+            background: #29b6f6;
+            text-decoration: none;
+            color: #000;
+            border-radius: 3px;
+        }
+
+        .content-body {
+            width: 1060px;
+            position: relative;
+            overflow: auto;
+            border: 1px solid #666;
+        }
+        .table-obras {
+            width: 150%;
+        }
+        .id-td {
+            widows: 5%;
+        }
+         [class^="td-"]{
+             width: 10%;
+             text-align: center
+         }
+
+    </style>
 @endsection
 
 @section('contenido')
@@ -14,20 +57,28 @@
     <div class="content">
         <div class="title">
             <h3>Tabla: Obras</h3>
-            <a href="{{ route('obras.form')}}" class="new-reg"><span>Nuevo Registro</span></a>
+            <a href="{{ route('obras.form') }}" class="new-reg"><span>Nuevo Registro</span></a>
         </div>
         <div class="content-body">
-            <table>
+            <table class="table-obras">
                 <thead class="table-thead">
                     <tr class="tr-head">
                         <th class="id-td">ID#</th>
-                        <th class="td-2">Nom. OBRA</th>
-                        <th class="td-3">Tip. OBRA</th>
-                        <th class="td-4">ESTATUS</th>
-                        <th class="td-5">Supervisor</th>
-                        <th class="td-6">F. INICIO</th>
-                        <th class="td-7">F. TERM.</th>
-                        <th class="td-8">ACCIONES</th>
+                        <th class="td-2" style="width: 100px;">Nom. OBRA</th>
+                        <th class="td-3">Estatus</th>
+                        <th class="td-4">T de Estatus</th>
+                        <th class="td-5">Observaciones</th>
+                        <th class="td-6">T. de Obra</th>
+                        <th class="td-7">Supervisor</th>
+                        <th class="td-8">F. INICIO</th>
+                        <th class="td-9">F. TERM.</th>
+                        <th class="td-10">Doc. Fisicos</th>
+                        <th class="td-11">FCC</th>
+                        <th class="td-12">Env. Factura</th>
+                        <th class="td-13">PEP</th>
+                        <th class="td-14">OPERACION</th>
+                        <th class="td-15">OEI</th>
+                        <th class="td-16">ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody class="table-body">
@@ -35,12 +86,20 @@
                         <tr class="tr-body">
                             <td class="id-td">{{ $item->id }}</td>
                             <td class="td-2">{{ $item->name_obra }}</td>
-                            <td class="td-3">{{ $item->tipo_obra }}</td>
-                            <td class="td-4 status"><span class="active">{{ $item->estatus }}</span></td>
-                            <td class="td-5">{{ $item->supervisor }}</td>
-                            <td class="td-6">{{ $item->fecha_inicio }}</td>
-                            <td class="td-7">{{ $item->fecha_terminacion }}</td>
-                            <td class="td-8">
+                            <td class="td-3 status"><span class="active">{{ $item->estatus }}</span></td>
+                            <td class="td-4">{{ $item->tipo_estatus }}</td>
+                            <td class="td-5">{{ $item->observacion }}</td>
+                            <td class="td-6">{{ $item->tipo_obra }}</td>
+                            <td class="td-7">{{ $item->supervisor }}</td>
+                            <td class="td-8">{{ $item->fecha_inicio }}</td>
+                            <td class="td-9">{{ $item->fecha_terminacion }}</td>
+                            <td class="td-10">{{ $item->doc_fisicos }}</td>
+                            <td class="td-11">{{ $item->fcc }}</td>
+                            <td class="td-12">{{ $item->enviado_factura }}</td>
+                            <td class="td-13">{{ $item->pep }}</td>
+                            <td class="td-14">{{ $item->operacion }}</td>
+                            <td class="td-15">{{ $item->oei }}</td>
+                            <td class="td-16">
                                 <button class="button-edit editbtn" data-tps="{{ $item->tipo_estatus }}"
                                     data-obs="{{ $item->observacion }}" data-dlabor="{{ $item->dias_laborados }}"
                                     data-fcompr="{{ $item->fecha_compromiso }}"
@@ -73,7 +132,7 @@
                     <input type="hidden" name="obra_id" id="obra_id" value="">
                     <div class="form-edit">
                         <label for="">Nombre de la obra</label>
-                        <input type="text" id="name_obra" name="name_obra" required/>
+                        <input type="text" id="name_obra" name="name_obra" required />
                     </div>
                     <div class="form-edit">
                         <label for="">Estatus</label>
@@ -103,10 +162,10 @@
                     <div class="form-edit">
                         <label for="">Observación</label>
                         <input type="text" name="observacion" id="observacion" required>
-                      </div>
+                    </div>
                     <div class="form-edit">
                         <label for="">Tipo de Obra </label>
-                        <input type="text" name="t_obra" id="t_obra" required/>
+                        <input type="text" name="t_obra" id="t_obra" required />
                     </div>
                     <div class="form-edit">
                         <label for="">Supervisor </label>
@@ -273,4 +332,3 @@
         });
     </script>
 @endsection
-

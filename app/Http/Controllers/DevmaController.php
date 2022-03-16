@@ -13,7 +13,7 @@ class DevmaController extends Controller
      */
     public function index()
     {
-        $todoMtr = \App\Models\Materiales::paginate(3);
+        $todoMtr = \App\Models\Materiales::simplePaginate(10);
         return view('pages.table-devmateriales', compact('todoMtr'));
     }
 
