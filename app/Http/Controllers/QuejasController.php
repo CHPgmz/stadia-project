@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Quejas;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,9 @@ class QuejasController extends Controller
      */
     public function index()
     {
-        $quejasTodo = Quejas::simplePaginate(3);
-        return view('pages.table-quejas', compact('quejasTodo'));
+        $quejasTodo = Quejas::simplePaginate(15);
+        $qjE = Quejas::count('id');
+        return view('pages.table-quejas', compact('quejasTodo', 'qjE'));
     }
 
     /**

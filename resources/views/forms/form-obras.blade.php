@@ -43,7 +43,7 @@
        </select>
      </div>
      <div class="div-form-obras">
-       <label for="">Observación</label>
+       <label for="">Observaciónes</label>
        <input type="text" name="observacion" id="observacion" autocomplete="off" required>
      </div>
      <div class="div-form-obras">
@@ -52,11 +52,12 @@
      </div>
      <div class="div-form-obras">
        <label for="">Supervisor</label>
-       <select id="supervisor" name="supervisor" required>
+       <input type="text" id="supervisor" name="supervisor" required>
+       <!-- <select id="supervisor" name="supervisor" required>
           <option value="Epifanio">Epifanio</option>
 					<option value="Oscar">Oscar</option>
 					<option value="David">David</option>
-        </select>
+       </select>-->
      </div>
      <div class="div-form-obras">
        <label for="">Fecha de Inicio</label>
@@ -64,11 +65,11 @@
      </div>
      <div class="div-form-obras">
        <label for="">Fecha de Terminacion</label>
-       <input type="date" name="f_terminacion" id="f_terminacion" autocomplete="off" required>
+       <input type="date" name="f_terminacion" id="f_terminacion" autocomplete="off">
      </div>
      <div class="div-form-obras">
        <label for="">Dias Laborados</label>
-       <input type="text" name="d_laborados" id="d_laborados" autocomplete="off" required>
+       <input type="text" name="d_laborados" id="d_laborados" autocomplete="off">
      </div>
      <div class="div-form-obras">
        <label for="">Fecha Compromiso</label>
@@ -122,6 +123,7 @@
       <div class="div-form-obras">
         <label for="">Material</label>
         <select id="material" name="material">
+          <option value=""></option>
           <option value="completo">Completo</option>
           <option value="a favor">A Favor</option>
           <option value="en contra">En contra</option>
@@ -134,7 +136,7 @@
       </div>
       <div class="div-form-obras">
         <label for="">Tipo de Material</label>
-        <input type="text" name="t_material" id="t_material" autocomplete="off" required>
+        <input type="text" name="t_material" id="t_material" autocomplete="off" >
       </div>
      <div class="div-form-obras">
        <button class="form-button" type="submit">Guardar</button>

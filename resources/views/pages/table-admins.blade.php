@@ -1,4 +1,7 @@
 @extends('menu_home')
+@section('page-title')
+    {{ 'Adminsitradores' }}
+@endsection
 
 @section('estilos')
 <link rel="stylesheet" href="{{ asset('css/style-table.css') }}">

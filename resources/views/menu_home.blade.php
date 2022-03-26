@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Index</title>
+	<title>@yield('page-title')</title>
   @yield('estilos')
 	<link rel="stylesheet" href="{{ asset('../../css/style.css') }}" />
 	<!--<script src="https://kit.fontawesome.com/2025855716.js" crossorigin="anonymous"></script>-->
@@ -43,49 +43,60 @@
 					<a href="{{ route('home') }}" class="dropbtn" role="button"><i class="fas fa-home"></i>Home</a>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="home"><i class="fa fa-table"></i> Obras</a>
-					<div id="myDropdown" class="dropdown-content">
+					<a href="{{ route('obras.todo') }}" class="dropbtn"><i class="fa fa-table"></i> Obras</a>
+					<div id="home" class="dropdown-content" data-idH="home">
 						<a href="{{ route('obras.form') }}">Registrar</a>
 						<a href="{{ route('obras.todo') }}">Consultar</a>
 					</div>
 				</li>
-				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="mtr"><i class="fas fa-tools"></i>Materiales</a>
+				<!--<li class="dropdown">
+					<a href="{{ route('materiales') }}" class="dropbtn" {{--role="button" data-id="mtr" id="mtr"--}}><i class="fas fa-tools"></i>Materiales</a>
 					<div id="myDropdown2" class="dropdown-content">
 						<a href="{{ route('materiales.form') }}">Registrar</a>
 						<a href="{{ route('materiales') }}">Consultar</a>
 					</div>
-				</li>
+				</li> -->
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="osl"><i class="fas fa-clipboard-check"></i>OS Liquidadas</a>
+					<a href="{{ route('os-liquidadas') }}" class="dropbtn" {{--role="button" data-id="osl"--}}><i class="fas fa-clipboard-check"></i>OS Liquidadas</a>
 					<div id="myDropdown3" class="dropdown-content">
 						<a href="{{ route('liquidadas.form') }}">Registrar</a>
 						<a href="{{ route('os-liquidadas') }}">Consultar</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="qjas"><i class="fas fa-clipboard-list"></i>Quejas</a>
+					<a href="{{ route('quejas.todo') }}" class="dropbtn" role="button" id="qjas"><i class="fas fa-clipboard-list"></i>Os Liquidadas sem.</a>
 					<div id="myDropdown4" class="dropdown-content">
 						<a href="{{ route('quejas.form') }}">Registrar</a>
 						<a href="{{ route('quejas.todo') }}">Consultar</a>
 					</div>
 				</li>
+				<!--<li class="dropdown">
+					<a href="{{ route('quejas.todo') }}" class="dropbtn" role="button" id="qjas"><i class="fas fa-clipboard-list"></i>Quejas</a>
+					<div id="myDropdown4" class="dropdown-content">
+						<a href="{{ route('quejas.form') }}">Registrar</a>
+						<a href="{{ route('quejas.todo') }}">Consultar</a>
+					</div>
+				</li>-->
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="cdr"><i class="fa fa-table"></i>Cuadrillas</a>
+					<a href="{{ route('garantias.todo') }}" class="dropbtn" {{--role="button" data-id="mtr" id="mtr"--}}><i class="fas fa-tools"></i>Quejas Garantias</a>
+
+				</li>
+				<li class="dropdown">
+					<a href="{{ route('cuadrillas.todo') }}" class="dropbtn" {{--role="button" id="cdr"--}}><i class="fa fa-table"></i>Cuadrillas</a>
 					<div id="myDropdown5" class="dropdown-content">
 						<a href="{{ route('cuadrilla.form') }}">Registrar</a>
 						<a href="{{ route('cuadrillas.todo') }}">Consultar</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="tcn"><i class="fas fa-users"></i>Tecnicos</a>
+					<a href="{{ route('tecnicos.todo') }}" class="dropbtn" {{--role="button" id="tcn"--}}><i class="fas fa-users"></i>Tecnicos</a>
 					<div id="myDropdown6" class="dropdown-content">
 						<a href="{{ route('form.tecnicos') }}">Registrar</a>
 						<a href="{{ route('tecnicos.todo') }}">Consultar</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropbtn" role="button" id="adm"><i class="fas fa-users-cog"></i>Administradores</a>
+					<a href="{{ route('admins.todo') }}" class="dropbtn" {{--role="button" id="adm"--}}><i class="fas fa-users-cog"></i>Administradores</a>
 					<div id="myDropdown7" class="dropdown-content">
 						<a href="#">Registrar</a>
 						<a href="{{ route('admins.todo') }}">Consultar</a>
@@ -114,7 +125,7 @@
   @yield('scripts')
 
   
-  <script type="text/javascript" src="{{ asset('scripts/modal.js') }}"></script>
+  <!-- <script type="text/javascript" src="{{ asset('scripts/modal.js') }}"></script> -->
 </body>
 
 </html>

@@ -14,7 +14,7 @@
        @csrf
      <div class="div-form-two">
        <label for="">Estado</label>
-			 <select id="" name="select">
+			 <select id="select" name="select">
 				  <option value="Aguascalientes">Aguascalientes</option>
 				  <option value="Baja California">Baja California</option>
 				  <option value="Baja California Sur">Baja California Sur</option>
@@ -48,48 +48,62 @@
               <option value="Yucatán">Yucatán</option>
               <option value="Zacatecas">Zacatecas</option>
 			 </select>
-       </select>
      </div>
      <div class="div-form-two">
        <label for="">Fecha</label>
-       <input type="date" name="fecha" required>
+       <input type="date" name="fecha" autocomplete="off" required>
      </div>
      <div class="div-form-two">
        <label for="">Numero de Telefono</label>
-       <input type="tel" name="telefono" placeholder="9169999999" maxlength="10" required>
+       <input type="tel" name="telefono" placeholder="9169999999" maxlength="10" autocomplete="off" required>
      </div>
      <div class="div-form-two">
        <label for="">Nombre del Cliente</label>
-       <input type="text" name="nombre_cliente" placeholder="David" required>
+       <input type="text" name="nombre_cliente" placeholder="David" autocomplete="off" required>
      </div>
      <div class="div-form-two">
        <label for="">Nombre del Tecnico</label>
-       <input type="text" name="nombre_tecnico" placeholder="Oscar" required>
+       <select id="nombre_tecnico" name="nombre_tecnico">
+        @foreach($tec_name as $item)
+          <option value="{{ $item->nombre_tec }}"> {{ $item->nombre_tec }}</option>
+        @endforeach
+       </select>
+       <!--<input type="text" name="nombre_tecnico" placeholder="Oscar" autocomplete="off" required>-->
      </div>
      <div class="div-form-two">
        <label for="">PIC Tecnico</label>
-       <input type="text" name="pic_tecnico" required>
+       <select id="pic_tecnico" name="pic_tecnico">
+        @foreach($tec_name as $item)
+          <option value="{{ $item->pic }}"> {{ $item->pic }}</option>
+        @endforeach
+       </select>
+       <!-- <input type="text" name="pic_tecnico" autocomplete="off" required> -->
+
      </div>
      <div class="div-form-two">
        <label for="">Metros de Instalacion</label>
-       <input type="number" name="metros_instalacion" required>
+       <input type="number" name="metros_instalacion" autocomplete="off" required>
      </div>
      <div class="div-form-two">
        <label for="">Numero Os</label>
-       <input type="number" name="numero_os" required>
-     </div>
-     <div class="div-form-two">
-       <label for="">Pisaples</label>
-       <input type="number" name="pisaplex" required>
+       <input type="number" name="numero_os" autocomplete="off" required>
      </div>
      <div class="div-form-two">
        <label for="">Distrito</label>
-       <input type="text" name="distrito" placeholder="XAM0005FO" required>
+       <input type="text" name="distrito" placeholder="XAM0005FO" autocomplete="off" required>
      </div>
       <div class="div-form-two">
         <label for="">Terminal</label>
-        <input type="number" name="terminal" required>
+        <input type="number" name="terminal" autocomplete="off" required>
       </div>
+     <div class="div-form-two">
+       <label for="">Puerto</label>
+       <input type="text" name="puerto" autocomplete="off" required>
+     </div>
+     <div class="div-form-two">
+       <label for="">Tecnologia</label>
+       <input type="text" name="tec" autocomplete="off" required>
+     </div>
      <div class="div-form-two">
        <button class="form-button" type="submit" role="button">Guardar</button>
      </div>

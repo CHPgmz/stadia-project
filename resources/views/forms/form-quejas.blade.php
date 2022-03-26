@@ -13,47 +13,47 @@
             @csrf
             <div class="div-form-obras">
                 <label for="">Fecha</label>
-                <input type="date" name="fecha" id="fecha" required />
+                <input type="date" name="fecha" id="fecha" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">Telefono del Cliente</label>
-                <input type="tel" name="telefono_cli" id="telefono_cli" maxlength="10" required />
+                <input type="tel" name="telefono_cli" id="telefono_cli" autocomplete="off" maxlength="10" required/>
             </div>
             <div class="div-form-obras">
                 <label for="">Nombre del Cliente</label>
-                <input type="text" name="nom_cli" id="nom_cli" required />
+                <input type="text" name="nom_cli" id="nom_cli" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">Nombre del Tecnico</label>
-                <input type="text" name="nom_tec" id="nom_tec" required />
+                <input type="text" name="nom_tec" id="nom_tec" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">PIC</label>
-                <input type="text" name="pic" id="pic" required />
+                <input type="text" name="pic" id="pic" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">ALFA</label>
-                <input type="text" name="alfa" id="alfa" required />
+                <input type="text" name="alfa" id="alfa" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">Folio Pisa</label>
-                <input type="text" name="folio_pisa" id="folio_pisa" required />
+                <input type="text" name="folio_pisa" autocomplete="off" id="folio_pisa" required />
             </div>
             <div class="div-form-obras">
                 <label for="">Folio Pisaplex</label>
-                <input type="text" name="folio_pisaplex" id="folio_pisaplex" required />
+                <input type="text" name="folio_pisaplex" autocomplete="off" id="folio_pisaplex" required />
             </div>
             <div class="div-form-obras">
                 <label for="">OS</label>
-                <input type="text" name="os" id="os" required />
+                <input type="text" name="os" id="os" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">DTTO</label>
-                <input type="text" name="dtto" id="dtto" required />
+                <input type="text" name="dtto" id="dtto" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">Observaciones</label>
-                <input type="text" name="observaciones" id="observaciones" required />
+                <input type="text" name="observaciones" autocomplete="off" id="observaciones" required />
             </div>
             <div class="div-form-obras">
                 <button class="form-button" type="submit">Guardar</button>

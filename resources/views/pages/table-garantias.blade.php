@@ -1,6 +1,7 @@
+
 @extends('menu_home')
 @section('page-title')
-    {{ 'Tecnicos' }}
+    {{ 'Quejas Garantias' }}
 @endsection
 
 @section('estilos')
@@ -43,18 +44,22 @@
         }
 
         [class^="tdt-"] {
-            width: 12%;
+            width: 9%;
         }
 
-        .tdt-3,
         .tdt-5,
-        .tdt-8 {
-            width: 10%;
+        .tdt-6,
+        .tdt-7 {
+            width: 7%;
         }
 
-        .tdt-9 {
-            width: 12%;
+        .tdt-10 {
+            width: 15%;
         }
+        .tdt-11 {
+            width: 13%;
+        }
+
 
         /* [class^="tr-"] */
         th,
@@ -72,7 +77,7 @@
             } */
 
         .tr-head th {
-            line-height: 10px;
+            line-height: 15px;
         }
 
         .tr-body {
@@ -116,51 +121,51 @@
 
     <div class="content">
         <div class="title">
-            <h3>Tabla: Tecnicos</h3>
-            <a href="{{ route('form.tecnicos') }}" class="new-reg"><span>Nuevo Registro</span></a>
+            <h3>Tabla: Quejas Garantias</h3>
+            <a href="{{ route('garantias.form') }}" class="new-reg"><span>Nuevo Registro</span></a>
         </div>
         <div class="content-body">
-            @if ($tec == 0)
+            @if ($gtodo == 0)
                 <h1 style="text-align: center;">No se encontraron registros</h1>
             @else
             <table class="table-tecnicos">
                 <thead class="table-thead">
                     <tr class="tr-head">
                         {{-- <th class="id-td">ID#</th> --}}
-                        <th class="tdt-1">Nombre</th>
-                        <th class="tdt-2">Apellidos</th>
-                        <th class="tdt-3">PIC</th>
-                        <th class="tdt-4">CURP</th>
-                        <th class="tdt-5">Telefono</th>
-                        <th class="tdt-6">Correo</th>
-                        <th class="tdt-7">ID-INE</th>
-                        <th class="tdt-8">NSS</th>
-                        <th class="tdt-9">Direccion</th>
-                        <th class="tdt-10">Edad</th>
+                        <th class="tdt-1">Cope</th>
+                        <th class="tdt-2">Tecnico</th>
+                        <th class="tdt-3">Cliente</th>
+                        <th class="tdt-4">Tel. Cliente</th>
+                        <th class="tdt-5">Liquidacion</th>
+                        <th class="tdt-6">Causa</th>
+                        <th class="tdt-7">Tipo de Falla</th>
+                        <th class="tdt-8">Accion Tomada</th>
+                        <th class="tdt-9">Fecha</th>
+                        <th class="tdt-10">Observacion</th>
                         <th class="tdt-11">ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody class="table-body">
-                    @foreach ($todoT as $item)
+                    @foreach ($grt as $item)
                         <tr class="tr-body">
                             {{-- <td class="id-td">1</td> --}}
-                            <td class="tdt-1">{{ $item->nombre_tec }}</td>
-                            <td class="tdt-2">{{ $item->apellidos }}</td>
-                            <td class="tdt-3">{{ $item->pic }}</td>
-                            <td class="tdt-4">{{ $item->curp }}</td>
-                            <td class="tdt-5">{{ $item->num_telefono }}</td>
-                            <td class="tdt-6">{{ $item->correo }}</td>
-                            <td class="tdt-7">{{ $item->ine }}</td>
-                            <td class="tdt-8">{{ $item->nss }}</td>
-                            <td class="tdt-9">{{ $item->direccion }}</td>
-                            <td class="tdt-10">{{ $item->edad }}</td>
+                            <td class="tdt-1">{{ $item->cope }}</td>
+                            <td class="tdt-2">{{ $item->tecnico }}</td>
+                            <td class="tdt-3">{{ $item->cliente }}</td>
+                            <td class="tdt-4">{{ $item->num_cli }}</td>
+                            <td class="tdt-5">{{ $item->liquidacion }}</td>
+                            <td class="tdt-6">{{ $item->causa }}</td>
+                            <td class="tdt-7">{{ $item->tipo_falla }}</td>
+                            <td class="tdt-8">{{ $item->accion_tomada }}</td>
+                            <td class="tdt-9">{{ $item->fecha }}</td>
+                            <td class="tdt-10">{{ $item->observacion }}</td>
                             <td class="tdt-11">
-                    <button class="button-edit editbtn" data-idt="{{ $item->id }}" data-name="{{ $item->nombre_tec }}"
-                                    data-ape="{{ $item->apellidos }}" data-pic="{{ $item->pic }}"
-                                    data-curp="{{ $item->curp }}" data-phone="{{ $item->num_telefono }}"
-                                    data-correo="{{ $item->correo }}" data-ine="{{ $item->ine }}"
-                                    data-nss="{{ $item->nss }}" data-dir="{{ $item->direccion }}"
-                                    data-edad="{{ $item->edad }}" data-toggle="modal" data-target="#editar"
+                    <button class="button-edit editbtn" data-idt="{{ $item->id }}" data-cope="{{ $item->cope }}"
+                                    data-tec="{{ $item->tecnico }}" data-cliente="{{ $item->cliente }}"
+                                    data-numcl="{{ $item->num_cli }}" data-liq="{{ $item->liquidacion }}"
+                                    data-causa="{{ $item->causa }}" data-falla="{{ $item->tipo_falla }}"
+                                    data-accion="{{ $item->accion_tomada }}" data-fecha="{{ $item->fecha }}"
+                                    data-obs="{{ $item->observacion }}" data-toggle="modal" data-target="#editar"
                                     onclick="modalEdit()"><i class="far fa-edit"></i>Editar</button>
               <button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
                             </td>
@@ -185,48 +190,52 @@
                     </div>
             </div>
             <div class="modal-body">
-                <form action="{{ route('tecnico.update') }}" class="form-obra" method="POST">
+                <form action="{{ route('garantias.update') }}" class="form-obra" method="POST">
                     @csrf
-                    <input type="hidden" id="id_tecnico" name="id_tecnico">
+                    <input type="hidden" id="id_gr" name="id_gr">
                     <div class="form-edit">
-                        <label for="">Nombre</label>
-                        <input type="text" id="nombre" name="nombre"/>
+                        <label for="">Cope</label>
+                        <input type="text" id="cope" name="cope"/>
                     </div>
                     <div class="form-edit">
-                        <label for="">Apellidos</label>
-                        <input type="text" id="apellidos" name="apellidos" />
+                        <label for="">Tecnico</label>
+                        <select id="tecnico" name="tecnico">
+                            @foreach ($tecnico as $item)
+                                <option value="{{ $item->nombre_tec }}">{{ $item->nombre_tec }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-edit">
-                        <label for="">PIC</label>
-                        <input type="text" id="pic" name="pic" />
+                        <label for="">Nombre del cliente</label>
+                        <input type="text" id="cliente" name="cliente" />
                     </div>
                     <div class="form-edit">
-                        <label for="">CURP</label>
-                        <input type="text" id="curp" name="curp" />
+                        <label for="">Telefono del Cliente</label>
+                        <input type="tel" id="tel_cli" name="tel_cli" />
                     </div>
                     <div class="form-edit">
-                        <label for="">TELEFONO</label>
-                        <input type="tel" id="tel" name="tel" />
+                        <label for="">Liquidación</label>
+                        <input type="number" id="liquidacion" name="liquidacion" />
                     </div>
                     <div class="form-edit">
-                        <label for="">CORREO</label>
-                        <input type="email" id="correo" name="correo" />
+                        <label for="">Causa</label>
+                        <input type="number" id="causa" name="causa"  />
                     </div>
                     <div class="form-edit">
-                        <label for="">ID - INE</label>
-                        <input type="text" id="ine" name="ine" />
+                        <label for="">Tipo de Falla</label>
+                        <input type="number" id="t_falla" name="t_falla" />
                     </div>
                     <div class="form-edit">
-                        <label for="">NSS</label>
-                        <input type="text" id="nss" name="nss" />
+                        <label for="">Acción Tomada</label>
+                        <input type="text" id="a_tomada" name="a_tomada" />
                     </div>
                     <div class="form-edit">
-                        <label for="">DIRECCIÓN</label>
-                        <input type="text" id="dir" name="dir" />
+                        <label for="">Fecha</label>
+                        <input type="date" id="fecha" name="fecha" />
                     </div>
                     <div class="form-edit">
-                        <label for="">EDAD</label>
-                        <input type="number" id="edad" name="edad" />
+                        <label for="">Observacion</label>
+                        <input type="text" id="obs" name="obs" />
                     </div>
                     <div class="button-edit-form form-edit">
                         <button class="buttons-forms but-edit" type="submit">Editar</button>
@@ -262,17 +271,17 @@
             //var compro = $(this).data('catid');
         
             // $('#obra_id').val(datos[0]);
-            $('#nombre').val($(this).data('name'));
-            $('#id_tecnico').val($(this).data('idt'));
-            $('#apellidos').val($(this).data('ape'));
-            $('#pic').val($(this).data('pic'));
-            $('#curp').val($(this).data('curp'));
-            $('#tel').val($(this).data('phone'));
-            $('#correo').val($(this).data('correo'));
-            $('#ine').val($(this).data('ine'));
-            $('#nss').val($(this).data('nss'));
-            $('#dir').val($(this).data('dir'));
-            $('#edad').val($(this).data('edad'));
+            $('#id_gr').val($(this).data('idt'));
+            $('#cope').val($(this).data('cope'));
+            $('#tecnico').val($(this).data('tec'));
+            $('#cliente').val($(this).data('cliente'));
+            $('#tel_cli').val($(this).data('numcl'));
+            $('#liquidacion').val($(this).data('liq'));
+            $('#causa').val($(this).data('causa'));
+            $('#t_falla').val($(this).data('falla'));
+            $('#a_tomada').val($(this).data('accion'));
+            $('#fecha').val($(this).data('fecha'));
+            $('#obs').val($(this).data('obs'));
 
         });
     </script>

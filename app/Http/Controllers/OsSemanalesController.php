@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OsSemanales;
 use Illuminate\Http\Request;
-use App\Models\Cuadrillas;
 
-class CuadrillasController extends Controller
+class OsSemanalesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class CuadrillasController extends Controller
      */
     public function index()
     {
-        $cuadrilla = Cuadrillas::simplePaginate(15);
-        return view('pages.table-cuadrillas', compact('cuadrilla'));
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class CuadrillasController extends Controller
      */
     public function create()
     {
-        return view('forms.form-cuadrillas');
+        //
     }
 
     /**
@@ -36,27 +35,16 @@ class CuadrillasController extends Controller
      */
     public function store(Request $request)
     {
-        $cuadr = new Cuadrillas;
-        $cuadr->nombre_cua = $request->nom_cua;
-        $cuadr->ine = $request->ine;
-        $cuadr->nss = $request->nss;
-        $cuadr->curp = $request->curp;
-        $cuadr->telefono = $request->telefono;
-        $cuadr->direccion = $request->dir;
-        $cuadr->f_nacimiento = $request->f_nacimiento;
-        $cuadr->edad = $request->edad;
-        $cuadr->save();
-
-        return back()->with('status', 'Se ha registrado correctamente');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\OsSemanales  $osSemanales
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(OsSemanales $osSemanales)
     {
         //
     }
@@ -64,10 +52,10 @@ class CuadrillasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\OsSemanales  $osSemanales
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(OsSemanales $osSemanales)
     {
         //
     }
@@ -76,10 +64,10 @@ class CuadrillasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\OsSemanales  $osSemanales
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, OsSemanales $osSemanales)
     {
         //
     }
@@ -87,10 +75,10 @@ class CuadrillasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\OsSemanales  $osSemanales
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(OsSemanales $osSemanales)
     {
         //
     }

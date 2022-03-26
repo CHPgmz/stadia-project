@@ -9,7 +9,7 @@
     @endif
 
     <main class="main-form">
-        <form action="#" {{-- class="form" --}} method="POST" class="form-osliquidadas">
+        <form action="{{ route('cuadrilla.insert') }}" {{-- class="form" --}} method="POST" class="form-osliquidadas">
             @csrf
             <div class="div-form-obras">
                 <label for="">Nombre</label>
@@ -17,7 +17,7 @@
             </div>
             <div class="div-form-obras">
                 <label for="">ID - INE</label>
-                <input type="tex" name="apellidos" id="apellidos" autocomplete="off" required />
+                <input type="tex" name="ine" id="ine" autocomplete="off" required />
             </div>
             <div class="div-form-obras">
                 <label for="">NSS</label>

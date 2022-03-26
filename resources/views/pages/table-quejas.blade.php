@@ -1,4 +1,7 @@
 @extends('menu_home')
+@section('page-title')
+    {{ 'Quejas' }}
+@endsection
 
 @section('estilos')
     <link rel="stylesheet" href="{{ asset('css/style-table.css') }}">
@@ -16,6 +19,9 @@
             <a href="{{ route('quejas.form') }}" class="new-reg"><span>Nuevo Registro</span></a>
         </div>
         <div class="content-body">
+            @if($qjE == 0)
+                <h1 style="text-align: center;">No se encontraron registros</h1>
+            @else
             <table>
                 <thead class="table-thead">
                     <tr class="tr-head">
@@ -50,6 +56,7 @@
                     @endforeach
                 </tbody>
             </table>
+        @endif
         </div>
     </div>
 

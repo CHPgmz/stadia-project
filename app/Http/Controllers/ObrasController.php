@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Obras;
 use App\Models\Materiales;
 use App\Models\OsLiquidadas;
+use App\Models\Quejas;
 
 class ObrasController extends Controller
 {
@@ -17,8 +18,9 @@ class ObrasController extends Controller
     public function index()
     {
         $todObras = \App\Models\Obras::simplePaginate(15);
+        $obs = \App\Models\Obras::count('id');
 
-        return view('pages.table-obras', compact('todObras'));
+        return view('pages.table-obras', compact('todObras', 'obs'));
     }
 
     public function home()
@@ -27,8 +29,9 @@ class ObrasController extends Controller
         $obrasT = Obras::count('id');
         $materiales = Materiales::count('id');
         $liquidadas = OsLiquidadas::count('id');
+        $quejas = Quejas::count('id');
 
-        return view('home', compact('homeObras', 'obrasT', 'materiales', 'liquidadas'));
+        return view('home', compact('homeObras', 'obrasT', 'materiales', 'liquidadas', 'quejas'));
     }
 
     /**
@@ -72,6 +75,7 @@ class ObrasController extends Controller
         $newObras->material = $request->material;
         $newObras->ob_material = $request->ob_material;
         $newObras->tipo_material = $request->t_material;
+
         $newObras->save();
 
         return back()->with('status', 'Se ha registrado correctamente');

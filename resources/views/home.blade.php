@@ -46,7 +46,7 @@
             <div class="info-nav">
                 <div class="info-body">
                     <span>Quejas</span>
-                    <p>10</p>
+                    <p>{{ $quejas }}</p>
                 </div>
                 <div><i class="fas fa-clipboard-list icon-quejas"></i></div>
             </div>
@@ -61,6 +61,9 @@
             <span>Ultimos 05 registros</span>
         </div>
         <div class="content-body">
+            @if($obrasT == 0 )
+                <h1 style="text-align: center;">No hay registros</h1>
+            @else
             <table>
                 <thead class="table-thead">
                     <tr class="tr-head">
@@ -88,6 +91,7 @@
                     @endforeach
                 </tbody>
             </table>
+        @endif
         </div>
     </div>
 

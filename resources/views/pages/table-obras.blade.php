@@ -1,5 +1,7 @@
 @extends('menu_home')
-
+@section('page-title')
+    {{ 'Obras' }}
+@endsection
 @section('estilos')
     {{-- <link rel="stylesheet" href="{{ asset('css/style-table.css') }}"> --}}
     <style>
@@ -111,6 +113,9 @@
             <a href="{{ route('obras.form') }}" class="new-reg"><span>Nuevo Registro</span></a>
         </div>
         <div class="content-body">
+            @if($obs == 0)
+                <h1 style="text-align: center;">No hay registros</h1>
+            @else
             <table class="table-obras">
                 <thead class="table-thead">
                     <tr class="tr-head">
@@ -133,6 +138,7 @@
                     </tr>
                 </thead>
                 <tbody class="table-body">
+                    
                     @foreach ($todObras as $item)
                         <tr class="tr-body">
                             <td class="id-td">{{ $item->id }}</td>
@@ -164,14 +170,17 @@
                                     data-oe="{{ $item->oe }}" data-acomedida="{{ $item->acomedida }}"
                                     data-ob="{{ $item->ob }}" data-material="{{ $item->material }}"
                                     data-obmate="{{ $item->ob_material }}" data-tmate="{{ $item->tipo_material }}"
+                                    data-obs="{{ $item->observaciones }}"
                                     data-toggle="modal" data-target="#editar" onclick="modalEdit()"><i
                                         class="far fa-edit"></i>Editar</button>
                                 <button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
                             </td>
                         </tr>
                     @endforeach
+                
                 </tbody>
             </table>
+        @endif
         </div>
     </div>
 
@@ -179,7 +188,12 @@
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <p>Editar Registro</p>
+                    <div class="header-content header-title"> 
+                        <p>Editar Registro</p>
+                    </div>
+                    <div class="header-content header-close" class="cls" role="button">
+                        <span aria-hidden="true" role="button" class="cls"onclick="modalClose()" >&times;</span>
+                    </div>
             </div>
             <div class="modal-body">
                 <form action="{{ route('obra.update') }}" class="form-obra" method="POST">
@@ -215,7 +229,7 @@
                         </select>
                     </div>
                     <div class="form-edit">
-                        <label for="">Observación</label>
+                        <label for="">Observaciónes</label>
                         <input type="text" name="observacion" id="observacion" required>
                     </div>
                     <div class="form-edit">
@@ -308,6 +322,7 @@
                         <label for="">Tipo de Material</label>
                         <input type="text" name="t_material" id="t_material" />
                     </div>
+
                     <div class="button-edit-form form-edit">
                         <button class="buttons-forms but-edit" type="submit">Editar</button>
                         <!--<button class="buttons-forms but-cancel close">Cancelar</button>-->
@@ -385,6 +400,7 @@
             $('#material').val(material);
             $('#ob_material').val(obmate);
             $('#t_material').val(tipomate);
+
         });
     </script>
 @endsection

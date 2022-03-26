@@ -14,7 +14,9 @@ class TecnicosController extends Controller
      */
     public function index()
     {
-        return view('pages.tecnicos-todo');
+        $todoT = Tecnicos::simplePaginate(15);
+        $tec = Tecnicos::count('id');
+        return view('pages.tecnicos-todo', compact('todoT', 'tec'));
     }
 
     /**
@@ -80,9 +82,22 @@ class TecnicosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $tecUp = Tecnicos::findOrFail($request->id_tecnico);
+        $tecUp->nombre_tec = $request->nombre;
+        $tecUp->apellidos = $request->apellidos;
+        $tecUp->pic = $request->pic;
+        $tecUp->curp = $request->curp;
+        $tecUp->num_telefono = $request->tel;
+        $tecUp->correo = $request->correo;
+        $tecUp->ine = $request->ine;
+        $tecUp->nss = $request->nss;
+        $tecUp->direccion = $request->dir;
+        $tecUp->edad = $request->edad;
+        $tecUp->save();
+
+        return back()->with('status', 'Se ha editado correctamente');
     }
 
     /**

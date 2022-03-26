@@ -1,22 +1,31 @@
-$(document).ready(function () {
-  $("#home").toggle(
-    function (e) {
-      $("#myDropdown").slideDown();
-      /*$('#id-head').css("background-color", "red");*/
-      /*$(this).text('Cerrar el panel');*/
-      e.preventDefault();
-    }, // Separamos las dos funciones con una coma
-
-    function (e) {
-      $("#myDropdown").slideUp();
-      /*$(this).text('Mostrar el panel oculto');*/
-      /*$('#id-head').css("background-color", "white");*/
-      e.preventDefault();
-    }
-  );
+$(document).ready(function(event){
+  $(".dropbtn").click(function(event){
+ var button = $(event.relatedTarget)
+  var idB = $(this).data('idH');
+   $(idB).slideToggle("slow");
+ });
 });
 
-$(document).ready(function () {
+
+//$(document).ready(function () {
+//  $("#home").toggle(
+//    function (e) {
+//      $("#myDropdown").slideDown();
+//      /*$('#id-head').css("background-color", "red");*/
+//      $(this).text('Cerrar el panel');*/
+//     * e.preventDefault();
+//    }, // Separamos las dos funciones con una coma
+//
+//    function (e) {
+//      $("#myDropdown").slideUp();
+//      $(this).text('Mostrar el panel oculto');*/
+//      /*$('#id-head').css("background-color", "white");*/
+//      e.preventDefault();
+//    }
+//  );
+//});
+
+/**$(document).ready(function () {
     $("#mtr").toggle(
       function (e) {
         $("#myDropdown2").removeClass("dropdown-content");
@@ -118,4 +127,4 @@ $(document).ready(function () {
       }
     );
   });
-
+*/
