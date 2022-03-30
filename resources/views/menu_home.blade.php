@@ -64,7 +64,7 @@
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="{{ route('quejas.todo') }}" class="dropbtn" role="button" id="qjas"><i class="fas fa-clipboard-list"></i>Os Liquidadas sem.</a>
+					<a href="{{ route('semanales.todo') }}" class="dropbtn" role="button" id="qjas"><i class="fas fa-clipboard-list"></i>Os Liquidadas sem.</a>
 					<div id="myDropdown4" class="dropdown-content">
 						<a href="{{ route('quejas.form') }}">Registrar</a>
 						<a href="{{ route('quejas.todo') }}">Consultar</a>

@@ -245,6 +245,10 @@ Aqui empieza el estilo de las modals
     padding-top: 3px;
 }
 
+.mod-sem {
+    padding-top: 30px;
+}
+
 .mod-devm {
     padding-top: 50px;
 }

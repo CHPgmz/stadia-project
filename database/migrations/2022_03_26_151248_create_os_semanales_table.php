@@ -14,7 +14,9 @@ class CreateOsSemanalesTable extends Migration
     public function up()
     {
         Schema::create('os_semanales', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_sem');
+            $table->string('name_semana');
+            $table->integer('año');
             $table->timestamps();
         });
     }

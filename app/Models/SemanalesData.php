@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OsSemanales extends Model
+class SemanalesData extends Model
 {
     use HasFactory;
-
-    protected $primaryKey = "id_sem";
-    protected $table = "os_semanales";
+    protected $table = 'semanales_data';
+    protected $primaryKey = 'id_data';
 }
