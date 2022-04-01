@@ -17,6 +17,7 @@
 			<div class="title">
 				<h3>Tabla: OS Liquidadas</h3>
 				<a href="{{ route('liquidadas.form') }}" class="new-reg"><span>Nuevo Registro</span></a>
+				<a href="{{ route('export.osl') }}" class="new-reg"><span>Descargar</span></a>
 			</div>
 			<div class="content-body">
             @if ($osl == 0)

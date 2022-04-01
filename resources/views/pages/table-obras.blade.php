@@ -97,6 +97,14 @@
             background-color: #ff1744;
         }
 
+        .mdl-open {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 50px;
+            border-radius: 2em;
+
+        }
+    
     </style>
 @endsection
 
@@ -111,6 +119,7 @@
         <div class="title">
             <h3>Tabla: Obras</h3>
             <a href="{{ route('obras.form') }}" class="new-reg"><span>Nuevo Registro</span></a>
+            <a href="{{ route('export.obras') }}" class="new-reg"><span>Descargar</span></a>
         </div>
         <div class="content-body">
             @if($obs == 0)
@@ -333,6 +342,13 @@
         </div>
     </div>
     </div>
+    <select name="mdl-dl" id="mdl-dl">
+        <div class="mdl-container">
+            <h2 class="mdl-title">Texto del Modal</h2>
+            <a href="#" class="mdl-close">X</a>
+        </div>
+        <a href="#mdl-dl" close="mdl-open">Abrir Modal</a>
+    </select>
 @endsection
 
 @section('scripts')

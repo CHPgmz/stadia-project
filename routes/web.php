@@ -26,6 +26,9 @@ Route::get('/', [ObrasController::class, 'home']);
 
 Route::get('home', [ObrasController::class, 'home'])->name('home');
 
+Route::get('export-os', [OslController::class, 'export_os'])->name('export.osl');
+Route::get('export-obras', [ObrasController::class, 'export_obras'])->name('export.obras');
+
 Route::get('Obras', [ObrasController::class, 'index'])->name('obras.todo');
 Route::get('obras-form', [ObrasController::class, 'create'])->name('obras.form');
 Route::post('/obras-insert', [ObrasController::class, 'store'])->name('obras.insert');

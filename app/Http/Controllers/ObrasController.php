@@ -7,6 +7,8 @@ use App\Models\Obras;
 use App\Models\Materiales;
 use App\Models\OsLiquidadas;
 use App\Models\Quejas;
+use App\Exports\LiquidadasExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ObrasController extends Controller
 {
@@ -15,10 +17,22 @@ class ObrasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function export_os()
+    // {
+
+    //     return Excel::download(new LiquidadasExport(viewO()), 'os-liquidadas.xlsx');
+    //     //return (new LiquidadasExport)->download('os-liquidadas.xlsx');
+    // }
+
+    public function export_obras()
+    {
+        return Excel::download(new LiquidadasExport('export.obras', ['obras' => Obras::all()]), 'obras.xlsx');
+    }
+
     public function index()
     {
-        $todObras = \App\Models\Obras::simplePaginate(15);
-        $obs = \App\Models\Obras::count('id');
+        $todObras = Obras::simplePaginate(15);
+        $obs = Obras::count('id');
 
         return view('pages.table-obras', compact('todObras', 'obs'));
     }

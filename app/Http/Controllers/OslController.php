@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\OsLiquidadas;
 use App\Models\Tecnicos;
+use App\Exports\LiquidadasExport;
+//use Maatwebsite\Excel\Excel as Excel;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OslController extends Controller
 {
@@ -13,6 +16,13 @@ class OslController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function export_os()
+    {
+
+        //return Excel::download(new LiquidadasExport, 'os-liquidadas.xlsx');
+        return Excel::download(new LiquidadasExport('export.os_liquidadas', ['osl' => OsLiquidadas::all()]), 'os-liquidadas.xlsx');
+        //return (new LiquidadasExport)->download('os-liquidadas.xlsx');
+    }
     public function index()
     {
         $todoL = OsLiquidadas::simplePaginate(15);
@@ -31,6 +41,7 @@ class OslController extends Controller
         $tec_name = Tecnicos::all();
         return view('forms.form-osliquidadas', compact('tec_name'));
     }
+
 
     /**
      * Store a newly created resource in storage.
