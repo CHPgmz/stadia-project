@@ -1,0 +1,146 @@
+.content {
+    width: 98%;
+    margin: 10px auto 0px auto;
+    background-color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 3px;
+}
+
+.title h3 {
+    padding: 10px 0px;
+    color: #313131;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.new-reg {
+    padding: 06px 16px;
+    background: #29b6f6;
+    text-decoration: none;
+    color: #000;
+    border-radius: 3px;
+}
+
+.content-body {
+    width: 1060px;
+    position: relative;
+    overflow: auto;
+    /* border: 1px solid #666; */
+}
+
+.table-obras {
+    margin-top: 20px;
+    width: 150%;
+}
+
+.id-td {
+    widows: 2px;
+}
+
+[class^="td-"] {
+    width: 9%;
+    /* text-align: center */
+}
+
+/* [class^="tr-"] */
+th,
+td {
+    text-align: left;
+    color: #3e5569;
+    font-size: 16px;
+    border-bottom: 1px solid #e1eaee;
+    padding: 2px 3px;
+    /* width: 50px; */
+}
+
+.td-11 {
+    width: 4%;
+}
+
+.tr-head th {
+    line-height: 10px;
+}
+
+.tr-body {
+    line-height: 20px;
+}
+
+.td-13,
+.td-14,
+.td-15 {
+    width: 10%;
+}
+
+[class^="button-"] {
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: none;
+    font-size: 12px;
+}
+
+.table-body tr:nth-child(even) {
+    background-color: #f8f6ff;
+}
+
+.button-edit {
+    background-color: #0ffff8;
+}
+
+.button-delete {
+    background-color: #ff1744;
+}
+
+/***    .mdl-open {
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 50px;
+        border-radius: 2em;
+        background-color: #44a786;
+    }
+
+    .mdl-dl {
+        width: 100%;
+        position: fixed;
+        inset: 0;
+        background-color: #0000005d;
+        display: flex;
+        transition: transform 0.5s;
+        transform: traslate(100%);
+    }
+    .mdl-dl:target {
+        transform: translate(0);
+    }
+
+    .mdl-container {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    background-color: #fff;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+.mdl-title {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.mdl-close {
+    position: absolute;
+    background-color: crimson;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color:#fff;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+
+***/

@@ -4,108 +4,7 @@
 @endsection
 @section('estilos')
     {{-- <link rel="stylesheet" href="{{ asset('css/style-table.css') }}"> --}}
-    <style>
-        .content {
-            width: 98%;
-            margin: 10px auto 0px auto;
-            background-color: #fff;
-            padding: 15px;
-            border: none;
-            border-radius: 3px;
-        }
-
-        .title h3 {
-            padding: 10px 0px;
-            color: #313131;
-            font-size: 18px;
-            line-height: 30px;
-        }
-
-        .new-reg {
-            padding: 06px 16px;
-            background: #29b6f6;
-            text-decoration: none;
-            color: #000;
-            border-radius: 3px;
-        }
-
-        .content-body {
-            width: 1060px;
-            position: relative;
-            overflow: auto;
-            /* border: 1px solid #666; */
-        }
-
-        .table-obras {
-            margin-top: 20px;
-            width: 150%;
-        }
-
-        .id-td {
-            widows: 2px;
-        }
-
-        [class^="td-"] {
-            width: 9%;
-            /* text-align: center */
-        }
-
-        /* [class^="tr-"] */
-        th,
-        td {
-            text-align: left;
-            color: #3e5569;
-            font-size: 16px;
-            border-bottom: 1px solid #e1eaee;
-            padding: 2px 3px;
-            /* width: 50px; */
-        }
-        .td-11 {
-            width: 4%;
-        }
-
-        .tr-head th {
-            line-height: 10px;
-        }
-
-        .tr-body {
-            line-height: 20px;
-        }
-
-        .td-13,
-        .td-14,
-        .td-15 {
-            width: 10%;
-        }
-
-        [class^="button-"] {
-            padding: 4px 10px;
-            border-radius: 3px;
-            border: none;
-            font-size: 12px;
-        }
-
-        .table-body tr:nth-child(even) {
-            background-color: #f8f6ff;
-        }
-
-        .button-edit {
-            background-color: #0ffff8;
-        }
-
-        .button-delete {
-            background-color: #ff1744;
-        }
-
-        .mdl-open {
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 50px;
-            border-radius: 2em;
-
-        }
-    
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/obras.css') }}">
 @endsection
 
 @section('contenido')
@@ -122,74 +21,105 @@
             <a href="{{ route('export.obras') }}" class="new-reg"><span>Descargar</span></a>
         </div>
         <div class="content-body">
-            @if($obs == 0)
+            @if ($obs == 0)
                 <h1 style="text-align: center;">No hay registros</h1>
             @else
-            <table class="table-obras">
-                <thead class="table-thead">
-                    <tr class="tr-head">
-                        <th class="id-td">ID#</th>
-                        <th class="td-2">Nom. OBRA</th>
-                        <th class="td-3">Estatus</th>
-                        <th class="td-4">T de Estatus</th>
-                        <th class="td-5">Observaciones</th>
-                        <th class="td-6">T. de Obra</th>
-                        <th class="td-7">Supervisor</th>
-                        <th class="td-8">F. INICIO</th>
-                        <th class="td-9">F. TERM.</th>
-                        <th class="td-10">Doc. Fisicos</th>
-                        <th class="td-11">FCC</th>
-                        <th class="td-12">Env. Factura</th>
-                        <th class="td-13">PEP</th>
-                        <th class="td-14">OPERACION</th>
-                        <th class="td-15">OEI</th>
-                        <th class="td-16">ACCIONES</th>
-                    </tr>
-                </thead>
-                <tbody class="table-body">
-                    
-                    @foreach ($todObras as $item)
-                        <tr class="tr-body">
-                            <td class="id-td">{{ $item->id }}</td>
-                            <td class="td-2">{{ $item->name_obra }}</td>
-                            <td class="td-3 status"><span class="active">{{ $item->estatus }}</span></td>
-                            <td class="td-4">{{ $item->tipo_estatus }}</td>
-                            <td class="td-5">{{ $item->observacion }}</td>
-                            <td class="td-6">{{ $item->tipo_obra }}</td>
-                            <td class="td-7">{{ $item->supervisor }}</td>
-                            <td class="td-8">{{ $item->fecha_inicio }}</td>
-                            <td class="td-9">{{ $item->fecha_terminacion }}</td>
-                            <td class="td-10">{{ $item->doc_fisicos }}</td>
-                            <td class="td-11">{{ $item->fcc }}</td>
-                            <td class="td-12">{{ $item->enviado_factura }}</td>
-                            <td class="td-13">{{ $item->pep }}</td>
-                            <td class="td-14">{{ $item->operacion }}</td>
-                            <td class="td-15">{{ $item->oei }}</td>
-                            <td class="td-16">
-                                <button class="button-edit editbtn" data-ido="{{ $item->id }}"
-                                    data-obra="{{ $item->name_obra }}" data-tbra="{{ $item->tipo_obra }}"
-                                    data-estatus="{{ $item->estatus }}" data-super="{{ $item->supervisor }}"
-                                    data-finicio="{{ $item->fecha_inicio }}"
-                                    data-term="{{ $item->fecha_terminacion }}" data-tps="{{ $item->tipo_estatus }}"
-                                    data-obs="{{ $item->observacion }}" data-dlabor="{{ $item->dias_laborados }}"
-                                    data-fcompr="{{ $item->fecha_compromiso }}"
-                                    data-dfisicos="{{ $item->doc_fisicos }}" data-fcc="{{ $item->fcc }}"
-                                    data-fact="{{ $item->enviado_factura }}" data-pep="{{ $item->pep }}"
-                                    data-operacion="{{ $item->operacion }}" data-oei="{{ $item->oei }}"
-                                    data-oe="{{ $item->oe }}" data-acomedida="{{ $item->acomedida }}"
-                                    data-ob="{{ $item->ob }}" data-material="{{ $item->material }}"
-                                    data-obmate="{{ $item->ob_material }}" data-tmate="{{ $item->tipo_material }}"
-                                    data-obs="{{ $item->observaciones }}"
-                                    data-toggle="modal" data-target="#editar" onclick="modalEdit()"><i
-                                        class="far fa-edit"></i>Editar</button>
-                                <button class="button-delete"><i class="far fa-trash-alt"></i>Eliminar</button>
-                            </td>
+                <table class="table-obras">
+                    <thead class="table-thead">
+                        <tr class="tr-head">
+                            <th class="id-td">ID#</th>
+                            <th class="td-2">Nom. OBRA</th>
+                            <th class="td-3">Estatus</th>
+                            <th class="td-4">T de Estatus</th>
+                            <th class="td-5">Observaciones</th>
+                            <th class="td-6">T. de Obra</th>
+                            <th class="td-7">Supervisor</th>
+                            <th class="td-8">F. INICIO</th>
+                            <th class="td-9">F. TERM.</th>
+                            <th class="td-10">Doc. Fisicos</th>
+                            <th class="td-11">FCC</th>
+                            <th class="td-12">Env. Factura</th>
+                            <th class="td-13">PEP</th>
+                            <th class="td-14">OPERACION</th>
+                            <th class="td-15">OEI</th>
+                            <th class="td-16">ACCIONES</th>
                         </tr>
-                    @endforeach
-                
-                </tbody>
-            </table>
-        @endif
+                    </thead>
+                    <tbody class="table-body">
+
+                        @foreach ($todObras as $item)
+                            <tr class="tr-body">
+                                <td class="id-td">{{ $item->id }}</td>
+                                <td class="td-2">{{ $item->name_obra }}</td>
+                                <td class="td-3 status"><span class="active">{{ $item->estatus }}</span></td>
+                                <td class="td-4">{{ $item->tipo_estatus }}</td>
+                                <td class="td-5">{{ $item->observacion }}</td>
+                                <td class="td-6">{{ $item->tipo_obra }}</td>
+                                <td class="td-7">{{ $item->supervisor }}</td>
+                                <td class="td-8">{{ $item->fecha_inicio }}</td>
+                                <td class="td-9">{{ $item->fecha_terminacion }}</td>
+                                <td class="td-10">{{ $item->doc_fisicos }}</td>
+                                <td class="td-11">{{ $item->fcc }}</td>
+                                <td class="td-12">{{ $item->enviado_factura }}</td>
+                                <td class="td-13">{{ $item->pep }}</td>
+                                <td class="td-14">{{ $item->operacion }}</td>
+                                <td class="td-15">{{ $item->oei }}</td>
+                                <td class="td-16">
+                                    <button class="button-edit editbtn" data-ido="{{ $item->id }}"
+                                        data-obra="{{ $item->name_obra }}" data-tbra="{{ $item->tipo_obra }}"
+                                        data-estatus="{{ $item->estatus }}" data-super="{{ $item->supervisor }}"
+                                        data-finicio="{{ $item->fecha_inicio }}"
+                                        data-term="{{ $item->fecha_terminacion }}"
+                                        data-tps="{{ $item->tipo_estatus }}" data-obs="{{ $item->observacion }}"
+                                        data-dlabor="{{ $item->dias_laborados }}"
+                                        data-fcompr="{{ $item->fecha_compromiso }}"
+                                        data-dfisicos="{{ $item->doc_fisicos }}" data-fcc="{{ $item->fcc }}"
+                                        data-fact="{{ $item->enviado_factura }}" data-pep="{{ $item->pep }}"
+                                        data-operacion="{{ $item->operacion }}" data-oei="{{ $item->oei }}"
+                                        data-oe="{{ $item->oe }}" data-acomedida="{{ $item->acomedida }}"
+                                        data-ob="{{ $item->ob }}" data-material="{{ $item->material }}"
+                                        data-obmate="{{ $item->ob_material }}" data-tmate="{{ $item->tipo_material }}"
+                                        data-obs="{{ $item->observaciones }}" data-toggle="modal" data-target="#editar"
+                                        onclick="modalEdit()"><i class="far fa-edit"></i>Editar</button>
+
+                                    <button class="button-delete dlbtn" data-idb="{{ $item->id }}" onclick="modalDL()" data-toggle="modal" data-target="#mdl-dlt"><i class="far fa-trash-alt"></i>Eliminar</button>
+                                </td>
+                            </tr>
+    
+                            
+                        @endforeach
+                    
+                    </tbody>
+                </table>
+            @endif
+        </div>
+    </div>
+    
+<div id="mdl-dlt" class="modal modal-dl" name="modal-dl" role="dialog" tabindex="-1" aria-labelledby="exampleModalLongTitle" ria-hidden="true">
+        <!-- Modal content -->
+        <div class="mdl-content" >
+            <div class="modal-header">
+                <div class="header-content header-title">
+                    <p>Eliminar registro</p>
+                </div>
+                <div class="header-content header-close" class="cls" role="button">
+                    <span aria-hidden="true" role="button" class="cls" onclick="modalClose()">&times;</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('elm-obra') }}" method="POST" class="form-obra" >
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-dl">
+                        <label for="">Se eliminara completamente el registro</label>
+                        <input type="hidden" name="obra_id" id="obra_id"  />
+                    </div>
+                    <div class="button-edit-form form-dl dlbtn">
+                        <button class="buttons-forms but-edit" type="submit">Eliminar</button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
 
@@ -197,12 +127,12 @@
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                    <div class="header-content header-title"> 
-                        <p>Editar Registro</p>
-                    </div>
-                    <div class="header-content header-close" class="cls" role="button">
-                        <span aria-hidden="true" role="button" class="cls"onclick="modalClose()" >&times;</span>
-                    </div>
+                <div class="header-content header-title">
+                    <p>Editar Registro</p>
+                </div>
+                <div class="header-content header-close" class="cls" role="button">
+                    <span aria-hidden="true" role="button" class="cls" onclick="modalClose()">&times;</span>
+                </div>
             </div>
             <div class="modal-body">
                 <form action="{{ route('obra.update') }}" class="form-obra" method="POST">
@@ -247,11 +177,7 @@
                     </div>
                     <div class="form-edit">
                         <label for="">Supervisor </label>
-                        <select id="supervisor" name="supervisor" required>
-                            <option value="Epifanio">Epifanio</option>
-                            <option value="Oscar">Oscar</option>
-                            <option value="David">David</option>
-                        </select>
+                        <input type="text" name="supervisor" id="supervisor">
                     </div>
                     <div class="form-edit">
                         <label for="">Fecha de Inicio</label>
@@ -342,21 +268,20 @@
         </div>
     </div>
     </div>
-    <select name="mdl-dl" id="mdl-dl">
-        <div class="mdl-container">
-            <h2 class="mdl-title">Texto del Modal</h2>
-            <a href="#" class="mdl-close">X</a>
-        </div>
-        <a href="#mdl-dl" close="mdl-open">Abrir Modal</a>
-    </select>
+
 @endsection
 
 @section('scripts')
     <script>
         var modal = document.getElementById("myModal");
-        //var btn = document.getElementById("myBtn");
-        var btn2 = document.getElementsByClassName("btn-dl");
+
         var span = document.getElementsByClassName("close");
+
+        var md_dl = document.getElementsByName("modal-dl");
+        var modal_dl = document.getElementById("mdl-dlt");
+
+        var btn2 = document.getElementsByClassName("btn-dl");
+        //var btn = document.getElementById("myBtn");
 
         function modalEdit(event) {
             modal.style.display = "block";
@@ -364,6 +289,12 @@
 
         function modalClose() {
             modal.style.display = "none";
+            modal_dl.style.display = "none";
+        }
+
+
+        function modalDL(event){
+            modal_dl.style.display = "block";
         }
     </script>
     <script>
@@ -417,6 +348,18 @@
             $('#ob_material').val(obmate);
             $('#t_material').val(tipomate);
 
+        });
+        
+      //  $('.dlbtn').on('click', function(event) {
+      //      $('#dl-obra').val($(this).data('id'));
+      //      var id = $(this).data('id');
+      //      
+      //  });
+        $('.dlbtn').on('click', function(event){
+            var button = $(event.relatedTarget)
+            var idb = button.data('idb');
+            
+            $('#obra_id').val($(this).data('idb'));
         });
     </script>
 @endsection

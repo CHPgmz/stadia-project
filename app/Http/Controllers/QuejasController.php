@@ -108,10 +108,10 @@ class QuejasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request/* $id */)
-    {
-        $del = Quejas::findOrFail($request->id_queja);
-        $del->delete();
-        return back();
-    }
+    // public function destroy(Request $request/* $id */)
+    // {
+    //     $del = Quejas::findOrFail($request->id_queja);
+    //     $del->delete();
+    //     return back();
+    // }
 }

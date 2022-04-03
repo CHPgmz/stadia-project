@@ -160,8 +160,13 @@ class ObrasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function elmObra(Request $request)
+    {   
+        $obra = \App\Models\Obras::findOrFail($request->obra_id);
+        if ($obra != null) {
+             $obra->delete();
+             return back()->with('status', 'Se ha eliminado');
+        }
+        return back()->with('status', 'No se pudo eliminadar');
     }
 }

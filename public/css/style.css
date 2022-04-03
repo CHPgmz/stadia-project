@@ -281,6 +281,20 @@ Aqui empieza el estilo de las modals
     animation-name: animatetop;
     animation-duration: 0.4s;
 }
+.mdl-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #b4c5d6;
+    width: 40%;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
@@ -344,7 +358,7 @@ Aqui empieza el estilo de las modals
     width: 5%;
     text-align: center;
 }
-.header-close > span{
+.header-close > span {
     font-size: 24px;
 }
 
@@ -376,7 +390,16 @@ Aqui empieza el estilo de las modals
     flex-direction: column;
     /* border: 1px solid green; */
 }
-
+.form-dl {
+    grid-column: 1/6;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid green; */
+}
+.form-dl label {
+    padding-top: 5px;
+    font-size: 18px;
+}
 .form-edit label {
     margin-top: 2px;
 }
@@ -475,85 +498,81 @@ Aqui empieza el estilo de las modals
     justify-content: space-between;
 }
 
-
 /**------Estlilo card: color para los cards----*/
 .content-data .content-info {
     margin-top: 20px;
-	margin-bottom: 15px;
+    margin-bottom: 15px;
     width: 22%;
     height: 120px;
     border-radius: 10px;
-	background: #fff;
+    background: #fff;
     border: 1px solid #bacac8;
 }
 /***--- Estilo primer nav card------*/
 .info-nav {
-
-	padding: 6px 8px;
-	height: 60%;
-	/*border: 1px solid black;*/
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    padding: 6px 8px;
+    height: 60%;
+    /*border: 1px solid black;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 /***--- Estilo segundo nav card------*/
 .info-nav-two {
-	border-top: 1px solid #bcbcbc;
+    border-top: 1px solid #bcbcbc;
 }
 
-.info-nav-two p{
-margin-right: 7px;
-color: #8898aa;
-font-size: 16px;
-font-weight: 400;
+.info-nav-two p {
+    margin-right: 7px;
+    color: #8898aa;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .fa-calendar {
-	color: #34515e;
-	margin: 0 10px;
+    color: #34515e;
+    margin: 0 10px;
 }
-.info-body span{
-	font-size: 13px;
-	color: #8898aa;
-	line-height: 20px;
-	font-weight: 600;
+.info-body span {
+    font-size: 13px;
+    color: #8898aa;
+    line-height: 20px;
+    font-weight: 600;
 }
 
 .info-body p {
-	font-size: 20px;
-	color: #32325d;
-	font-weight: 600;
+    font-size: 20px;
+    color: #32325d;
+    font-weight: 600;
 }
 
 /*---Estilo para los iconoc adentro de los cards----*/
 i[class="fa fa-table icon-table"],
 i[class="fas fa-tools icon-mtr"],
 i[class="fas fa-clipboard-check icon-os"],
-i[class="fas fa-clipboard-list icon-quejas"]{
-	border-radius: 100%;
-	padding: 10px;
-	color: #fff; 
-	font-size: 22px;
+i[class="fas fa-clipboard-list icon-quejas"] {
+    border-radius: 100%;
+    padding: 10px;
+    color: #fff;
+    font-size: 22px;
 }
 .icon-table {
-	background-color: #f44336;
+    background-color: #f44336;
 }
 .icon-os {
-	background-color: #08fbff;
+    background-color: #08fbff;
 }
 
 .icon-mtr {
-	background-color: #76ff03;
+    background-color: #76ff03;
 }
 .icon-quejas {
-	background-color: #ffff00;
+    background-color: #ffff00;
 }
 /*.info-home {
 	background-color: #fff;
 	border: 1px solid #bacac8;
 }*/
-
-
 
 /*-----Estilo de los formularios---*/
 .title-form {
@@ -561,7 +580,6 @@ i[class="fas fa-clipboard-list icon-quejas"]{
     text-align: center;
     font-size: 18px;
     font-weight: 600;
-
 }
 
 .form {
@@ -582,17 +600,17 @@ i[class="fas fa-clipboard-list icon-quejas"]{
 .div-form {
     width: 90%;
     margin: 10px auto;
-   /* border: 1px solid black;*/
+    /* border: 1px solid black;*/
     display: flex;
     flex-direction: column;
 }
-    
+
 .div-form-two {
     width: 40%;
     margin: 10px auto;
     display: flex;
     flex-direction: column;
-} 
+}
 
 .div-form-obras {
     width: 40%;
@@ -600,7 +618,6 @@ i[class="fas fa-clipboard-list icon-quejas"]{
     display: flex;
     flex-direction: column;
 }
-
 
 [class^="div-form"] > label {
     font-weight: 600;
@@ -611,29 +628,29 @@ i[class="fas fa-clipboard-list icon-quejas"]{
 
 [class^="div-form"] > input {
     height: 35px;
-    border:1px solid #ced4da;
-    padding-left:10px;
+    border: 1px solid #ced4da;
+    padding-left: 10px;
     font-size: 16px;
     border-radius: 3px;
 }
 
 [class^="div-form-obras"] > input {
     height: 30px;
-    border:1px solid #ced4da;
-    padding-left:10px;
+    border: 1px solid #ced4da;
+    padding-left: 10px;
     font-size: 16px;
     border-radius: 3px;
 }
 
 [class^="div-form-obras"] > select {
     height: 33px;
-    border:1px solid #06d9d7;
+    border: 1px solid #06d9d7;
     font-size: 16px;
 }
 
 [class^="div-form"] > select {
     height: 33px;
-    border:1px solid #06d9d7;
+    border: 1px solid #06d9d7;
     font-size: 16px;
 }
 
@@ -649,7 +666,7 @@ select {
     border: 2px solid #00d0ff;
 }
 
-[class^="div-form"] > input:focus { 
+[class^="div-form"] > input:focus {
     border: 1px solid #06d9d7;
 }
 
@@ -671,7 +688,7 @@ select {
     width: 700px;
     padding: 10px;
     margin: 10px auto;
-    border: 1px solid #76FA3C;
+    border: 1px solid #76fa3c;
     color: black;
     background-color: #e4f5db;
     text-align: center;
